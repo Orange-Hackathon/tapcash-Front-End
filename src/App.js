@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { login, logout } from "./Slices/userSlice";
 import { Button } from "@mui/material";
 import LoginModal from "./Features/Authentication/Components/LoginModal/LoginModal";
+import SignUpModal from "./Features/Authentication/Components/SignUpModal/SignUpModal";
 /**
  * The main app of our application it handles routing
  *
@@ -27,6 +28,7 @@ function App() {
         Logged in
       </Button>
       <LoginModal />
+      <SignUpModal />
     </div>
   );
 }

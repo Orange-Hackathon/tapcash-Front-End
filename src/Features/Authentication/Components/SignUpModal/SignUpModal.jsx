@@ -8,6 +8,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import SendIcon from "@mui/icons-material/Send";
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
+import SignUpStepper from "../SignUpStepper/SignUpStepper";
+import Box from "@mui/material/Box";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -16,16 +18,32 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
   },
+  //   padding: "10%",
 }));
 
-export default function LoginModal() {
+const steps = [
+  "Select campaign settings",
+  "Create an ad group",
+  "Create an ad",
+];
+
+export default function SignUpModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
 
   return (
     <div>
-      <Button onClick={handleOpen}>Login</Button>
+      <Button onClick={handleOpen}>Sign up</Button>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -48,8 +66,9 @@ export default function LoginModal() {
               textAlign: "center",
             }}
           >
-            Sign up
+            Login
           </Typography>
+          <SignUpStepper steps={steps} activeStep={activeStep} />
         </BootstrapDialogTitle>
         <DialogContent>
           <LoginForm />
@@ -57,13 +76,28 @@ export default function LoginModal() {
         <DialogActions>
           <Button
             autoFocus
-            onClick={handleClose}
+            onClick={handleNext}
             variant="contained"
             endIcon={<SendIcon />}
             sx={{ width: "50%", margin: "0 auto 10px auto" }}
           >
-            Login
+            Continue
           </Button>
+          {/* <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+            <Button
+              color="inherit"
+              disabled={activeStep === 0}
+              onClick={handleBack}
+              sx={{ mr: 1 }}
+            >
+              Back
+            </Button>
+            <Box sx={{ flex: "1 1 auto" }} />
+
+            <Button onClick={handleNext}>
+              {activeStep === steps.length - 1 ? "Finish" : "Next"}
+            </Button>
+          </Box> */}
         </DialogActions>
       </BootstrapDialog>
     </div>
