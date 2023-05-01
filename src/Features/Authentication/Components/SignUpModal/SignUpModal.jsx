@@ -19,7 +19,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-const steps = ["Personal", "Pin"];
+const steps = ["Personal Information", "Pin number"];
 
 export default function SignUpModal() {
   const [open, setOpen] = React.useState(false);
@@ -33,6 +33,9 @@ export default function SignUpModal() {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+  const handleStep = (step) => () => {
+    setActiveStep(step);
   };
 
   return (
@@ -50,8 +53,6 @@ export default function SignUpModal() {
           onClose={handleClose}
         >
           <Typography
-            variant="h1"
-            component="h1"
             gutterBottom
             sx={{
               fontWeight: 700,
@@ -62,7 +63,11 @@ export default function SignUpModal() {
           >
             Sign up
           </Typography>
-          <SignUpStepper steps={steps} activeStep={activeStep} />
+          <SignUpStepper
+            steps={steps}
+            activeStep={activeStep}
+            handleStep={handleStep}
+          />
         </BootstrapDialogTitle>
         <DialogContent>
           {activeStep === 0 && <SignUpModalScreen1 />}

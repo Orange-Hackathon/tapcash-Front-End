@@ -38,8 +38,6 @@ export default function LoginModal() {
           onClose={handleClose}
         >
           <Typography
-            variant="h1"
-            component="h1"
             gutterBottom
             sx={{
               fontWeight: 700,
