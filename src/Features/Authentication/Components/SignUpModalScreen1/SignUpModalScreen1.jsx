@@ -32,7 +32,7 @@ const SignUpModalScreen1 = () => {
     if (e.target.value.length < 3)
       setPhoneNumberError("Password must be at least 3 characters long");
     else if (!/^(01)[0125][0-9]{8}$/.test(e.target.value))
-      setPhoneNumberError("Password must contain special characters");
+      setPhoneNumberError("Password must be a valid phone number");
     else setPhoneNumberError(null);
     setPhoneNumber(e.target.value);
   };
