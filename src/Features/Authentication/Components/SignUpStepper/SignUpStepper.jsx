@@ -4,9 +4,9 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 
-export default function SignUpStepper({ activeStep,steps }) {
+export default function SignUpStepper({ activeStep, steps }) {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "80%", margin: "auto" }}>
       <Stepper activeStep={activeStep}>
         {steps.map((label) => {
           const stepProps = {};

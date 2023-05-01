@@ -48,7 +48,7 @@ export default function LoginModal() {
               textAlign: "center",
             }}
           >
-            Sign up
+            Login
           </Typography>
         </BootstrapDialogTitle>
         <DialogContent>

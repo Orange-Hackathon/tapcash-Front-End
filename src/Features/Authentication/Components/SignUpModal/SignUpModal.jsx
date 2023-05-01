@@ -1,7 +1,6 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import LoginForm from "../LoginForm/LoginForm";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
@@ -9,7 +8,7 @@ import DialogActions from "@mui/material/DialogActions";
 import SendIcon from "@mui/icons-material/Send";
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
 import SignUpStepper from "../SignUpStepper/SignUpStepper";
-import Box from "@mui/material/Box";
+import SignUpModalScreen1 from "../SignUpModalScreen1/SignUpModalScreen1";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -18,14 +17,9 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
   },
-  //   padding: "10%",
 }));
 
-const steps = [
-  "Select campaign settings",
-  "Create an ad group",
-  "Create an ad",
-];
+const steps = ["Personal", "Pin"];
 
 export default function SignUpModal() {
   const [open, setOpen] = React.useState(false);
@@ -34,7 +28,7 @@ export default function SignUpModal() {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setActiveStep((prevActiveStep) => (prevActiveStep + 1) % 2);
   };
 
   const handleBack = () => {
@@ -66,12 +60,14 @@ export default function SignUpModal() {
               textAlign: "center",
             }}
           >
-            Login
+            Sign up
           </Typography>
           <SignUpStepper steps={steps} activeStep={activeStep} />
         </BootstrapDialogTitle>
         <DialogContent>
-          <LoginForm />
+          {activeStep === 0 && <SignUpModalScreen1 />}
+          {activeStep === 1 && <h1>Step 2</h1>}
+          {activeStep === 2 && <h1>Step 3</h1>}
         </DialogContent>
         <DialogActions>
           <Button

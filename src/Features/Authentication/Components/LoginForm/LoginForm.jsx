@@ -52,7 +52,6 @@ const LoginForm = () => {
         variant="filled"
         onChange={handlePasswordChange}
       />
-
     </Box>
   );
 };
