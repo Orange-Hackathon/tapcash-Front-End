@@ -6,6 +6,8 @@ import "./App.css";
 // Reset css
 import CssBaseline from "@mui/material/CssBaseline";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 // Import redux
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout } from "./Slices/userSlice";
@@ -13,6 +15,16 @@ import { Button } from "@mui/material";
 import LoginModal from "./Features/Authentication/Components/LoginModal/LoginModal";
 import SignUpModal from "./Features/Authentication/Components/SignUpModal/SignUpModal";
 import Dashboard from "./Features/Dashboard/Pages/Dashboard/Dashboard";
+
+const theme = createTheme({
+  typography: {
+    // Set default text color
+    body1: {
+      color: "#1A1A1A",
+    },
+  },
+  palette: {},
+});
 /**
  * The main app of our application it handles routing
  *
@@ -26,12 +38,14 @@ function App() {
   return (
     <div>
       <CssBaseline />
-      {/* <Button onClick={() => dispatch(login({ userName: "user" }))}>
+      <ThemeProvider theme={theme}>
+        {/* <Button onClick={() => dispatch(login({ userName: "user" }))}>
         Logged in
-      </Button>
-      <LoginModal />
-      <SignUpModal /> */}
-      <Dashboard />
+      </Button> */}
+        <LoginModal />
+        {/* <SignUpModal /> */}
+        {/* <Dashboard /> */}
+      </ThemeProvider>
     </div>
   );
 }

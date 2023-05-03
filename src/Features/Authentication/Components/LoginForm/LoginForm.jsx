@@ -1,27 +1,64 @@
+import { Button, styled } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-const LoginForm = () => {
-  const [userNameError, setUserNameError] = useState(null);
-  const [passwordError, setPasswordError] = useState(null);
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleUserNameChange = (e) => {
+const StyledTextField = styled(TextField)(({ theme }) => ({
+  "& .MuiInputBase-root": {
+    borderRadius: "16px",
+    height: "64px",
+
+    backgroundColor: theme.palette.background.body1,
+    margin: "auto",
+
+    "&:hover:before": {
+      border: "0px",
+    },
+    [theme.breakpoints.up("xs")]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "400px",
+    },
+  },
+}));
+const StyledLoginButton = styled(Button)(({ theme }) => ({
+  [theme.breakpoints.up("xs")]: {
+    width: "80%",
+    margin: "auto",
+    borderRadius: "16px",
+    height: "64px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    width: "400px",
+    height: "64px",
+    margin: "auto",
+    borderRadius: "16px",
+  },
+}));
+
+const LoginForm = ({ handleChange }) => {
+  const [phoneNumberError, setPhoneNumberError] = useState(null);
+  const [pinError, setPinError] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [pin, setPin] = useState("");
+
+  const handlePhoneNumberChange = (e) => {
     if (e.target.value.length < 3)
-      setUserNameError("Username must be at least 3 characters long");
-    else if (/[^\w\s]/gi.test(e.target.value))
-      setUserNameError("Username must not contain special characters");
-    else setUserNameError(null);
-    setUserName(e.target.value);
+      setPhoneNumberError("Password must be at least 3 characters long");
+    else if (!/^(01)[0125][0-9]{8}$/.test(e.target.value))
+      setPhoneNumberError("Password must be a valid phone number");
+    else setPhoneNumberError(null);
+    setPhoneNumber(e.target.value);
   };
-  const handlePasswordChange = (e) => {
-    if (e.target.value.length < 3)
-      setPasswordError("Password must be at least 3 characters long");
-    else if (!/[^\w\s]/gi.test(e.target.value))
-      setPasswordError("Password must contain special characters");
-    else setPasswordError(null);
-    setPassword(e.target.value);
+  const handlePinChange = (e) => {
+    if (e.target.value.length > 4) return;
+    if (e.target.value.length < 4)
+      setPinError("Password must be 4 characters long");
+    else if (!/^\d+$/.test(e.target.value))
+      setPinError("Password must contain numbers only");
+    else setPinError(null);
+    setPin(e.target.value);
   };
 
   return (
@@ -36,22 +73,32 @@ const LoginForm = () => {
       noValidate
       autoComplete="off"
     >
-      <TextField
-        error={userNameError}
-        label="username"
+      <StyledTextField
+        error={phoneNumberError}
+        label="Phone Number"
         defaultValue=""
-        helperText={userNameError && userNameError}
-        variant="filled"
-        onChange={handleUserNameChange}
+        helperText={phoneNumberError && phoneNumberError}
+        variant="outlined"
+        onChange={handlePhoneNumberChange}
+        value={phoneNumber}
       />
-      <TextField
-        error={passwordError}
-        label="password"
+      <StyledTextField
+        error={pinError}
+        label="PIN"
         defaultValue=""
-        helperText={passwordError && passwordError}
-        variant="filled"
-        onChange={handlePasswordChange}
+        helperText={pinError && pinError}
+        variant="outlined"
+        onChange={handlePinChange}
+        value={pin}
       />
+      <StyledLoginButton
+        autoFocus
+        onClick={handleChange}
+        variant="contained"
+        disabled={phoneNumberError || pinError || !phoneNumber || !pin}
+      >
+        Login
+      </StyledLoginButton>
     </Box>
   );
 };

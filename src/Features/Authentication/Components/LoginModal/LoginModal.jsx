@@ -8,6 +8,9 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import SendIcon from "@mui/icons-material/Send";
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
+import { Box, Pagination } from "@mui/material";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import { useTheme } from "@emotion/react";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -16,16 +19,47 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
   },
+  "& .MuiPaper-root": {
+    borderRadius: "24px",
+    height: "610px",
+    width: "528px",
+  },
 }));
+const DotPagination = styled(Pagination)(({ theme }) => {
+  return {
+    "& .MuiPagination-ul": {
+      justifyContent: "center",
+    },
+  };
+});
+const LoginTitle = styled(Typography)(({ theme }) => {
+  return {
+    fontSize: "24px",
+    textAlign: "center",
+    LineHeight: "32px",
+  };
+});
+
+const DotIcon = styled(FiberManualRecordIcon)(({ theme, item }) => ({
+  color: item.selected ? theme.typography.body1.color : "#D9D9D9",
+  width: "12px",
+  height: "12px",
+  fontSize: "100px",
+  marginTop: "4px",
+}));
+
 
 export default function LoginModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const [page, setPage] = React.useState(1);
+  const handleChange = (event) => {
+    setPage(page + 1);
+  };
   return (
     <div>
-      <Button onClick={handleOpen}>Login</Button>
+      <Button onClick={handleOpen}>Login</Button>{" "}
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -37,32 +71,21 @@ export default function LoginModal() {
           id="customized-dialog-title"
           onClose={handleClose}
         >
-          <Typography
-            gutterBottom
-            sx={{
-              fontWeight: 700,
-              fontSize: "3rem",
-              color: "#2196f3",
-              textAlign: "center",
-            }}
-          >
-            Login
-          </Typography>
+          <Box>
+            <DotPagination
+              count={2}
+              page={page}
+              onChange={handleChange}
+              hidePrevButton
+              hideNextButton
+              renderItem={(item) => <DotIcon item={item} />}
+            />
+          </Box>
+          <LoginTitle>Login</LoginTitle>
         </BootstrapDialogTitle>
         <DialogContent>
-          <LoginForm />
+          <LoginForm handleChange={handleChange} />
         </DialogContent>
-        <DialogActions>
-          <Button
-            autoFocus
-            onClick={handleClose}
-            variant="contained"
-            endIcon={<SendIcon />}
-            sx={{ width: "50%", margin: "0 auto 10px auto" }}
-          >
-            Login
-          </Button>
-        </DialogActions>
       </BootstrapDialog>
     </div>
   );
