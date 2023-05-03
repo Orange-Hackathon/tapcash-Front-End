@@ -15,18 +15,15 @@ import Fade from "@mui/material/Fade";
 import { CircularProgress } from "@mui/material";
 import CheckCircleOutlineTwoToneIcon from "@mui/icons-material/CheckCircleOutlineTwoTone";
 import { green } from "@mui/material/colors";
-
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuiDialogContent-root": {
-    padding: theme.spacing(2),
-  },
-  "& .MuiDialogActions-root": {
-    padding: theme.spacing(1),
-  },
-}));
+import { StyledSubmitButton } from "../UI/FormControls.styled";
+import {
+  BootstrapDialog,
+  DotIcon,
+  DotPagination,
+  DialogTitle,
+} from "../UI/ModalControls.styled";
 
 const SignUpFinalScreen = () => {
-  const [loading, setLoading] = React.useState(false);
   const [query, setQuery] = React.useState("idle");
   const timerRef = React.useRef();
 
@@ -73,11 +70,13 @@ export default function SignUpModal() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [activeStep, setActiveStep] = React.useState(0);
-
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
-
+  const [page, setPage] = React.useState(1);
+  const handleChange = (event) => {
+    setPage(page + 1);
+  };
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
@@ -94,59 +93,44 @@ export default function SignUpModal() {
         open={open}
         maxWidth="sm"
         fullWidth
+        width="548px"
+        height="682px"
       >
         <BootstrapDialogTitle
           id="customized-dialog-title"
           onClose={handleClose}
         >
-          <Typography
-            gutterBottom
-            sx={{
-              fontWeight: 700,
-              fontSize: "3rem",
-              color: "#2196f3",
-              textAlign: "center",
-            }}
-          >
-            Sign up
-          </Typography>
-          <SignUpStepper
+          <Box>
+            <DotPagination
+              count={2}
+              page={page}
+              onChange={handleChange}
+              hidePrevButton
+              hideNextButton
+              renderItem={(item) => <DotIcon item={item} />}
+            />
+          </Box>
+          <DialogTitle>Sign up</DialogTitle>
+          {/* <SignUpStepper
             steps={steps}
             activeStep={activeStep}
             handleStep={handleStep}
-          />
+          /> */}
         </BootstrapDialogTitle>
         <DialogContent>
-          {activeStep === 0 && <SignUpModalScreen1 />}
-          {activeStep === 1 && <SignUpModalScreen2 />}
-          {activeStep === 2 && <SignUpFinalScreen />}
+          {page === 1 && <SignUpModalScreen1 />}
+          {page === 2 && <SignUpModalScreen2 />}
+          {page === 3 && <SignUpFinalScreen />}
         </DialogContent>
+
         <DialogActions>
-          <Button
+          <StyledSubmitButton
             autoFocus
-            onClick={handleNext}
+            onClick={handleChange}
             variant="contained"
-            endIcon={<SendIcon />}
-            sx={{ width: "50%", margin: "0 auto 10px auto" }}
           >
-            {activeStep === steps.length - 1 ? "Sign up" : "Continue"}
-          </Button>
-
-          {/* <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
-
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
-            </Button>
-          </Box> */}
+            {activeStep === steps.length - 1 ? "Sign up" : "Next"}
+          </StyledSubmitButton>
         </DialogActions>
       </BootstrapDialog>
     </div>

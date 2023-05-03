@@ -1,53 +1,17 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import LoginForm from "../LoginForm/LoginForm";
-import { styled } from "@mui/material/styles";
-import Dialog from "@mui/material/Dialog";
+
 import DialogContent from "@mui/material/DialogContent";
 
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
-import { Box, Pagination } from "@mui/material";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuiDialogContent-root": {
-    padding: theme.spacing(2),
-  },
-  "& .MuiDialogActions-root": {
-    padding: theme.spacing(1),
-  },
-  "& .MuiPaper-root": {
-    borderRadius: "24px",
-    height: "610px",
-    width: "528px",
-  },
-}));
-const DotPagination = styled(Pagination)(({ theme }) => {
-  return {
-    "& .MuiPagination-ul": {
-      justifyContent: "center",
-    },
-  };
-});
-const LoginTitle = styled(Typography)(({ theme }) => {
-  return {
-    fontSize: "24px",
-    textAlign: "center",
-    LineHeight: "32px",
-    marginTop: "31px",
-  };
-});
-
-const DotIcon = styled(FiberManualRecordIcon)(({ theme, item }) => ({
-  color: item.selected
-    ? theme.typography.body1.color
-    : theme.palette.action.disabledBackground,
-  width: "12px",
-  height: "12px",
-  fontSize: "100px",
-  marginTop: "36px",
-}));
+import { Box } from "@mui/material";
+import {
+  BootstrapDialog,
+  DotIcon,
+  DotPagination,
+  DialogTitle,
+} from "../UI/ModalControls.styled";
 
 export default function LoginModal() {
   const [open, setOpen] = React.useState(false);
@@ -66,6 +30,8 @@ export default function LoginModal() {
         open={open}
         maxWidth="sm"
         fullWidth
+        width="528px"
+        height="610px"
       >
         <BootstrapDialogTitle
           id="customized-dialog-title"
@@ -81,7 +47,7 @@ export default function LoginModal() {
               renderItem={(item) => <DotIcon item={item} />}
             />
           </Box>
-          <LoginTitle>Login</LoginTitle>
+          <DialogTitle>Login</DialogTitle>
         </BootstrapDialogTitle>
         <DialogContent>
           <LoginForm handleChange={handleChange} />

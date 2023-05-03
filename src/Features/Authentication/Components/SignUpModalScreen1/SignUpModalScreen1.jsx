@@ -1,6 +1,12 @@
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+
 import { useState } from "react";
+
+import {
+  StyledTextField,
+  FormContainer,
+  StyledBox,
+  StyledSubText,
+} from "../UI/FormControls.styled";
 
 const SignUpModalScreen1 = () => {
   const [firstNameError, setFirstNameError] = useState(null);
@@ -47,50 +53,45 @@ const SignUpModalScreen1 = () => {
   };
 
   return (
-    <Box
-      component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "80%" },
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <TextField
-        error={firstNameError}
-        label="First Name"
-        defaultValue=""
-        helperText={firstNameError && firstNameError}
-        variant="outlined"
-        onChange={handleFirstNameChange}
-      />
-      <TextField
-        error={lastNameError}
-        label="Last Name"
-        defaultValue=""
-        helperText={lastNameError && lastNameError}
-        variant="outlined"
-        onChange={handleLastNameChange}
-      />
-      <TextField
-        error={phoneNumberError}
-        label="Phone number"
-        defaultValue=""
-        helperText={phoneNumberError && phoneNumberError}
-        variant="outlined"
-        onChange={handlePhoneNumberChange}
-      />
-      <TextField
-        error={emailError}
-        label="email"
-        defaultValue=""
-        helperText={emailError && emailError}
-        variant="outlined"
-        onChange={handleEmailChange}
-      />
-    </Box>
+    <FormContainer component="form" noValidate autoComplete="off">
+      <StyledBox>
+        <StyledTextField
+          error={firstNameError}
+          label="First Name"
+          defaultValue=""
+          helperText={firstNameError && firstNameError}
+          variant="filled"
+          onChange={handleFirstNameChange}
+        />
+        <StyledTextField
+          error={lastNameError}
+          label="Last Name"
+          defaultValue=""
+          helperText={lastNameError && lastNameError}
+          variant="filled"
+          onChange={handleLastNameChange}
+        />
+        <StyledTextField
+          error={phoneNumberError}
+          label="Phone number"
+          defaultValue=""
+          helperText={phoneNumberError && phoneNumberError}
+          variant="filled"
+          onChange={handlePhoneNumberChange}
+        />
+        <StyledTextField
+          error={emailError}
+          label="email"
+          defaultValue=""
+          helperText={emailError && emailError}
+          variant="filled"
+          onChange={handleEmailChange}
+        />
+        <StyledSubText variant="muted">
+          Already have an account?Login
+        </StyledSubText>
+      </StyledBox>
+    </FormContainer>
   );
 };
 

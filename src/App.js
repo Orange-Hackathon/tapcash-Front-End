@@ -19,7 +19,6 @@ import Dashboard from "./Features/Dashboard/Pages/Dashboard/Dashboard";
 const theme = createTheme({
   typography: {
     fontFamily: ["Poppins", "sans-seri", "Neucha", "cursive"].join(","),
-    // Set default text color
     body1: {
       color: "#1A1A1A",
     },
@@ -33,6 +32,9 @@ const theme = createTheme({
     },
     background: {
       muted: "#EFEFEF",
+    },
+    primary: {
+      main: "#333E96",
     },
   },
 });
@@ -54,7 +56,7 @@ function App() {
         Logged in
       </Button> */}
         <LoginModal />
-        {/* <SignUpModal /> */}
+        <SignUpModal />
         {/* <Dashboard /> */}
       </ThemeProvider>
     </div>
