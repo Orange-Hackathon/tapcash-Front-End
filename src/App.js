@@ -12,6 +12,7 @@ import { login, logout } from "./Slices/userSlice";
 import { Button } from "@mui/material";
 import LoginModal from "./Features/Authentication/Components/LoginModal/LoginModal";
 import SignUpModal from "./Features/Authentication/Components/SignUpModal/SignUpModal";
+import Dashboard from "./Features/Dashboard/Pages/Dashboard/Dashboard";
 /**
  * The main app of our application it handles routing
  *
@@ -21,14 +22,16 @@ function App() {
   const { userName } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   console.log(userName);
+
   return (
     <div>
       <CssBaseline />
-      <Button onClick={() => dispatch(login({ userName: "user" }))}>
+      {/* <Button onClick={() => dispatch(login({ userName: "user" }))}>
         Logged in
       </Button>
       <LoginModal />
-      <SignUpModal />
+      <SignUpModal /> */}
+      <Dashboard />
     </div>
   );
 }

@@ -8,8 +8,9 @@ const SignUpModalScreen2 = () => {
   const [pin, setPin] = useState("");
 
   const handlePinChange = (e) => {
-    if (e.target.value.length < 3)
-      setPinError("Pin must be at least 3 characters long");
+    if (e.target.value.length === 5) return;
+    if (e.target.value.length !== 4)
+      setPinError("Pin must be 4 characters long");
     else if (!/^(01)[0125][0-9]{8}$/.test(e.target.value))
       setPinError("Pin must be a valid number");
     else setPinError(null);
@@ -43,6 +44,7 @@ const SignUpModalScreen2 = () => {
         error={pinError}
         label="PIN"
         defaultValue=""
+        value={pin}
         helperText={pinError && pinError}
         variant="outlined"
         onChange={handlePinChange}
