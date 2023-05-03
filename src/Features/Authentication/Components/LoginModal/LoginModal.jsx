@@ -35,17 +35,19 @@ const LoginTitle = styled(Typography)(({ theme }) => {
     fontSize: "24px",
     textAlign: "center",
     LineHeight: "32px",
+    marginTop: "31px",
   };
 });
 
 const DotIcon = styled(FiberManualRecordIcon)(({ theme, item }) => ({
-  color: item.selected ? theme.typography.body1.color : "#D9D9D9",
+  color: item.selected
+    ? theme.typography.body1.color
+    : theme.palette.action.disabledBackground,
   width: "12px",
   height: "12px",
   fontSize: "100px",
-  marginTop: "4px",
+  marginTop: "36px",
 }));
-
 
 export default function LoginModal() {
   const [open, setOpen] = React.useState(false);

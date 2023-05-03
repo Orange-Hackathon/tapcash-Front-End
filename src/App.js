@@ -22,8 +22,18 @@ const theme = createTheme({
     body1: {
       color: "#1A1A1A",
     },
+    muted: {
+      color: "#939094",
+    },
   },
-  palette: {},
+  palette: {
+    action: {
+      disabledBackground: "#E3E3E4",
+    },
+    background: {
+      muted: "#EFEFEF",
+    },
+  },
 });
 /**
  * The main app of our application it handles routing

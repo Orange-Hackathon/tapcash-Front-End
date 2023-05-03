@@ -1,4 +1,4 @@
-import { Button, styled } from "@mui/material";
+import { Button, Typography, styled } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
@@ -6,14 +6,25 @@ import { useState } from "react";
 const StyledTextField = styled(TextField)(({ theme }) => ({
   "& label": {
     top: "29%",
+    color: `${theme.typography.muted.color} !important`,
   },
   "& .MuiInputBase-root": {
+    border: "0px",
     borderRadius: "16px",
     height: "64px",
-    backgroundColor: theme.palette.background.body1,
+    backgroundColor: `${theme.palette.background.muted} !important`,
     margin: "auto",
     marginTop: "20px",
     "&:hover:before": {
+      border: "0px",
+    },
+    "&:before": {
+      border: "0px",
+    },
+    "&:hover:after": {
+      border: "0px",
+    },
+    "&:after": {
       border: "0px",
     },
     [theme.breakpoints.up("xs")]: {
@@ -23,11 +34,16 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
       width: "400px",
     },
   },
+  "&.MuiFormControl-root ": {
+    [theme.breakpoints.up("xs")]: {
+      width: "100%",
+    },
+  },
 }));
 const StyledLoginButton = styled(Button)(({ theme }) => ({
   marginTop: "64px !important",
   [theme.breakpoints.up("xs")]: {
-    width: "80%",
+    width: "100%",
     margin: "auto",
     borderRadius: "16px",
     height: "64px",
@@ -44,9 +60,23 @@ const LoginFormContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  marginTop: "20px",
+}));
+const StyledBox = styled(Box)(({ theme }) => ({
+  marginTop: "-4px",
+  [theme.breakpoints.up("xs")]: {
+    width: "80%",
+  },
 }));
 
+const StyledForgotPin = styled(Typography)(({ theme }) => ({
+  marginTop: "8px",
+  marginLeft: "auto",
+  width: "fit-content",
+  display: "block",
+  "&:hover": {
+    cursor: "pointer",
+  },
+}));
 const LoginForm = ({ handleChange }) => {
   const [phoneNumberError, setPhoneNumberError] = useState(null);
   const [pinError, setPinError] = useState(null);
@@ -73,32 +103,37 @@ const LoginForm = ({ handleChange }) => {
 
   return (
     <LoginFormContainer component="form" noValidate autoComplete="off">
-      <StyledTextField
-        error={phoneNumberError}
-        label="Phone Number"
-        defaultValue=""
-        helperText={phoneNumberError && phoneNumberError}
-        variant="outlined"
-        onChange={handlePhoneNumberChange}
-        value={phoneNumber}
-      />
-      <StyledTextField
-        error={pinError}
-        label="PIN"
-        defaultValue=""
-        helperText={pinError && pinError}
-        variant="outlined"
-        onChange={handlePinChange}
-        value={pin}
-      />
-      <StyledLoginButton
-        autoFocus
-        onClick={handleChange}
-        variant="contained"
-        disabled={phoneNumberError || pinError || !phoneNumber || !pin}
-      >
-        Login
-      </StyledLoginButton>
+      <StyledBox>
+        <StyledTextField
+          error={phoneNumberError}
+          label="Phone Number"
+          defaultValue=""
+          helperText={phoneNumberError && phoneNumberError}
+          variant="filled"
+          onChange={handlePhoneNumberChange}
+          value={phoneNumber}
+        />
+        <StyledTextField
+          error={pinError}
+          label="PIN"
+          defaultValue=""
+          helperText={pinError && pinError}
+          variant="filled"
+          onChange={handlePinChange}
+          value={pin}
+        />
+        <StyledForgotPin variant="muted" component="a">
+          Forgot PIN?
+        </StyledForgotPin>
+        <StyledLoginButton
+          autoFocus
+          onClick={handleChange}
+          variant="contained"
+          disabled={phoneNumberError || pinError || !phoneNumber || !pin}
+        >
+          Login
+        </StyledLoginButton>
+      </StyledBox>
     </LoginFormContainer>
   );
 };
