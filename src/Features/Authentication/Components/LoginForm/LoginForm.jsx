@@ -4,13 +4,15 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
+  "& label": {
+    top: "29%",
+  },
   "& .MuiInputBase-root": {
     borderRadius: "16px",
     height: "64px",
-
     backgroundColor: theme.palette.background.body1,
     margin: "auto",
-
+    marginTop: "20px",
     "&:hover:before": {
       border: "0px",
     },
@@ -23,6 +25,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   },
 }));
 const StyledLoginButton = styled(Button)(({ theme }) => ({
+  marginTop: "64px !important",
   [theme.breakpoints.up("xs")]: {
     width: "80%",
     margin: "auto",
@@ -35,6 +38,13 @@ const StyledLoginButton = styled(Button)(({ theme }) => ({
     margin: "auto",
     borderRadius: "16px",
   },
+}));
+const LoginFormContainer = styled(Box)(({ theme }) => ({
+  "& .MuiTextField-root": { m: 1, width: "80%" },
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  marginTop: "20px",
 }));
 
 const LoginForm = ({ handleChange }) => {
@@ -62,17 +72,7 @@ const LoginForm = ({ handleChange }) => {
   };
 
   return (
-    <Box
-      component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "80%" },
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <LoginFormContainer component="form" noValidate autoComplete="off">
       <StyledTextField
         error={phoneNumberError}
         label="Phone Number"
@@ -99,7 +99,7 @@ const LoginForm = ({ handleChange }) => {
       >
         Login
       </StyledLoginButton>
-    </Box>
+    </LoginFormContainer>
   );
 };
 

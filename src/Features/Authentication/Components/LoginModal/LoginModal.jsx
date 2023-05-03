@@ -5,12 +5,10 @@ import LoginForm from "../LoginForm/LoginForm";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
-import SendIcon from "@mui/icons-material/Send";
+
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
 import { Box, Pagination } from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import { useTheme } from "@emotion/react";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
