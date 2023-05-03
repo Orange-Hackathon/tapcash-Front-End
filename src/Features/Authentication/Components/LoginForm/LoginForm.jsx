@@ -3,10 +3,12 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 
-const StyledTextField = styled(TextField)(({ theme }) => ({
+const StyledTextField = styled(TextField)(({ theme, isError }) => ({
   "& label": {
     top: "29%",
-    color: `${theme.typography.muted.color} !important`,
+    color: !isError
+      ? `${theme.typography.muted.color} !important`
+      : theme.palette.text.danger,
   },
   "& .MuiInputBase-root": {
     border: "0px",
@@ -106,8 +108,8 @@ const LoginForm = ({ handleChange }) => {
       <StyledBox>
         <StyledTextField
           error={phoneNumberError}
+          isError={phoneNumberError}
           label="Phone Number"
-          defaultValue=""
           helperText={phoneNumberError && phoneNumberError}
           variant="filled"
           onChange={handlePhoneNumberChange}
@@ -115,8 +117,8 @@ const LoginForm = ({ handleChange }) => {
         />
         <StyledTextField
           error={pinError}
+          isError={pinError}
           label="PIN"
-          defaultValue=""
           helperText={pinError && pinError}
           variant="filled"
           onChange={handlePinChange}
