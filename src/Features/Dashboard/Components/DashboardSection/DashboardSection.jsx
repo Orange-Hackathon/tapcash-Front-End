@@ -1,11 +1,18 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Insights from "../Insights/Insights";
 
 const DashboardSection = () => {
   return (
     <Container maxWidth="lg">
       <Typography variant="h4">Dashboard</Typography>
-      <Insights />
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <Insights />
+        </Grid>
+        <Grid item xs={6}>
+          <Insights />
+        </Grid>
+      </Grid>
     </Container>
   );
 };
