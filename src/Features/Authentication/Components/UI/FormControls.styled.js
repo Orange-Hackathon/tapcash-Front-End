@@ -44,7 +44,7 @@ export const StyledTextField = styled(TextField)(({ theme, isError }) => ({
 }));
 
 export const StyledSubmitButton = styled(Button)(({ theme }) => ({
-  marginTop: "14px !important",
+  marginTop: "34px !important",
   marginBottom: "5px !important",
   [theme.breakpoints.up("xs")]: {
     width: "100%",

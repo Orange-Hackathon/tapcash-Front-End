@@ -1,13 +1,7 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
-import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
-import SendIcon from "@mui/icons-material/Send";
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
-import SignUpStepper from "../SignUpStepper/SignUpStepper";
 import SignUpModalScreen1 from "../SignUpModalScreen1/SignUpModalScreen1";
 import SignUpModalScreen2 from "../SignUpModalScreen2/SignUpModalScreen2";
 import Box from "@mui/material/Box";
@@ -15,7 +9,6 @@ import Fade from "@mui/material/Fade";
 import { CircularProgress } from "@mui/material";
 import CheckCircleOutlineTwoToneIcon from "@mui/icons-material/CheckCircleOutlineTwoTone";
 import { green } from "@mui/material/colors";
-import { StyledSubmitButton } from "../UI/FormControls.styled";
 import {
   BootstrapDialog,
   DotIcon,
@@ -63,25 +56,13 @@ const SignUpFinalScreen = () => {
   );
 };
 
-const steps = ["Personal Information", "Pin number"];
-
 export default function SignUpModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [activeStep, setActiveStep] = React.useState(0);
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
   const [page, setPage] = React.useState(1);
-  const handleChange = (event) => {
+  const handlePageChange = (event) => {
     setPage(page + 1);
-  };
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-  const handleStep = (step) => () => {
-    setActiveStep(step);
   };
 
   return (
@@ -104,7 +85,7 @@ export default function SignUpModal() {
             <DotPagination
               count={2}
               page={page}
-              onChange={handleChange}
+              onChange={handlePageChange}
               hidePrevButton
               hideNextButton
               renderItem={(item) => <DotIcon item={item} />}
@@ -118,20 +99,10 @@ export default function SignUpModal() {
           /> */}
         </BootstrapDialogTitle>
         <DialogContent>
-          {page === 1 && <SignUpModalScreen1 />}
+          {page === 1 && <SignUpModalScreen1 handlePageChange={handlePageChange} />}
           {page === 2 && <SignUpModalScreen2 />}
           {page === 3 && <SignUpFinalScreen />}
         </DialogContent>
-
-        <DialogActions>
-          <StyledSubmitButton
-            autoFocus
-            onClick={handleChange}
-            variant="contained"
-          >
-            {activeStep === steps.length - 1 ? "Sign up" : "Next"}
-          </StyledSubmitButton>
-        </DialogActions>
       </BootstrapDialog>
     </div>
   );

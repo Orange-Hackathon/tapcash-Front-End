@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 import {
@@ -6,9 +5,10 @@ import {
   FormContainer,
   StyledBox,
   StyledSubText,
+  StyledSubmitButton,
 } from "../UI/FormControls.styled";
 
-const SignUpModalScreen1 = () => {
+const SignUpModalScreen1 = ({ handlePageChange }) => {
   const [firstNameError, setFirstNameError] = useState(null);
   const [lastNameError, setLastNameError] = useState(null);
   const [phoneNumberError, setPhoneNumberError] = useState(null);
@@ -57,6 +57,7 @@ const SignUpModalScreen1 = () => {
       <StyledBox>
         <StyledTextField
           error={firstNameError}
+          isError={firstNameError}
           label="First Name"
           defaultValue=""
           helperText={firstNameError && firstNameError}
@@ -65,6 +66,7 @@ const SignUpModalScreen1 = () => {
         />
         <StyledTextField
           error={lastNameError}
+          isError={lastNameError}
           label="Last Name"
           defaultValue=""
           helperText={lastNameError && lastNameError}
@@ -73,6 +75,7 @@ const SignUpModalScreen1 = () => {
         />
         <StyledTextField
           error={phoneNumberError}
+          isError={phoneNumberError}
           label="Phone number"
           defaultValue=""
           helperText={phoneNumberError && phoneNumberError}
@@ -81,6 +84,7 @@ const SignUpModalScreen1 = () => {
         />
         <StyledTextField
           error={emailError}
+          isError={emailError}
           label="email"
           defaultValue=""
           helperText={emailError && emailError}
@@ -90,6 +94,23 @@ const SignUpModalScreen1 = () => {
         <StyledSubText variant="muted">
           Already have an account?Login
         </StyledSubText>
+        <StyledSubmitButton
+          autoFocus
+          onClick={handlePageChange}
+          variant="contained"
+          disabled={
+            phoneNumberError ||
+            firstNameError ||
+            lastNameError ||
+            emailError ||
+            !phoneNumber ||
+            !firstName ||
+            !lastName ||
+            !email
+          }
+        >
+          Next
+        </StyledSubmitButton>
       </StyledBox>
     </FormContainer>
   );
