@@ -5,7 +5,7 @@ import LoginForm from "../LoginForm/LoginForm";
 import DialogContent from "@mui/material/DialogContent";
 
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import {
   BootstrapDialog,
   DotIcon,
@@ -21,6 +21,7 @@ export default function LoginModal() {
   const handleChange = (event) => {
     setPage(page + 1);
   };
+  const theme = useTheme();
   return (
     <div>
       <Button onClick={handleOpen}>Login</Button>{" "}
@@ -30,28 +31,39 @@ export default function LoginModal() {
         open={open}
         maxWidth="sm"
         fullWidth
-        width="528px"
-        height="610px"
       >
-        <BootstrapDialogTitle
-          id="customized-dialog-title"
-          onClose={handleClose}
+        <Box
+          className="login-modal"
+          sx={{
+            [theme.breakpoints.up("xs")]: {
+              width: "100%",
+            },
+            [theme.breakpoints.up("sm")]: {
+              width: "528px",
+            },
+            height: "610px",
+          }}
         >
-          <Box>
-            <DotPagination
-              count={2}
-              page={page}
-              onChange={handleChange}
-              hidePrevButton
-              hideNextButton
-              renderItem={(item) => <DotIcon item={item} />}
-            />
-          </Box>
-          <DialogTitle>Login</DialogTitle>
-        </BootstrapDialogTitle>
-        <DialogContent>
-          <LoginForm handleChange={handleChange} />
-        </DialogContent>
+          <BootstrapDialogTitle
+            id="customized-dialog-title"
+            onClose={handleClose}
+          >
+            <Box>
+              <DotPagination
+                count={2}
+                page={page}
+                onChange={handleChange}
+                hidePrevButton
+                hideNextButton
+                renderItem={(item) => <DotIcon item={item} />}
+              />
+            </Box>
+            <DialogTitle>Login</DialogTitle>
+          </BootstrapDialogTitle>
+          <DialogContent>
+            <LoginForm handleChange={handleChange} />
+          </DialogContent>
+        </Box>
       </BootstrapDialog>
     </div>
   );

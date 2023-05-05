@@ -13,8 +13,7 @@ export const BootstrapDialog = styled(Dialog)(({ theme, width, height }) => ({
   },
   "& .MuiPaper-root": {
     borderRadius: "24px",
-    height: height,
-    width: width,
+    width: "fit-content",
   },
 }));
 

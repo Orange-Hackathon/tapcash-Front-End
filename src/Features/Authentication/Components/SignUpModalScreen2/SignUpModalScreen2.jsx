@@ -34,6 +34,14 @@ const SignUpModalScreen2 = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        [theme.breakpoints.up("xs")]: {
+          width: "100%",
+        },
+        [theme.breakpoints.up("sm")]: {
+          width: "600px",
+        },
+        width: "600px",
+        height: "339px",
       }}
       noValidate
       autoComplete="off"

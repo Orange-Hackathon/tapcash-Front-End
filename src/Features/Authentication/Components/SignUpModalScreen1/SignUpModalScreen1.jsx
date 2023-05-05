@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { Box, useTheme } from "@mui/material";
 import {
   StyledTextField,
   FormContainer,
@@ -52,9 +53,23 @@ const SignUpModalScreen1 = ({ handlePageChange }) => {
     else setEmailError(null);
     setEmail(e.target.value);
   };
-
+  const theme = useTheme();
   return (
-    <FormContainer component="form" noValidate autoComplete="off">
+    <FormContainer
+      sx={{
+        [theme.breakpoints.up("xs")]: {
+          width: "100%",
+        },
+        [theme.breakpoints.up("sm")]: {
+          width: "528px",
+        },
+        width: "610px",
+        height: "682px",
+      }}
+      component="form"
+      noValidate
+      autoComplete="off"
+    >
       <DialogTitle>Sign up</DialogTitle>
       <StyledBox>
         <StyledTextField

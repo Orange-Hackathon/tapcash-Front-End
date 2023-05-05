@@ -37,6 +37,7 @@ export const StyledTextField = styled(TextField)(({ theme, isError }) => ({
     },
   },
   "&.MuiFormControl-root ": {
+    marginLeft: "auto",
     [theme.breakpoints.up("xs")]: {
       width: "100%",
     },
@@ -61,7 +62,7 @@ export const StyledSubmitButton = styled(Button)(({ theme }) => ({
 }));
 
 export const FormContainer = styled(Box)(({ theme }) => ({
-  "& .MuiTextField-root": { m: 1, width: "80%" },
+  "& .MuiTextField- root": { m: 1, width: "80%" },
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

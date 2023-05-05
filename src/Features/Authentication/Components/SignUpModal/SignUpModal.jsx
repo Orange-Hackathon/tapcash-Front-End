@@ -73,8 +73,6 @@ export default function SignUpModal() {
         open={open}
         maxWidth="sm"
         fullWidth
-        width="548px"
-        height="682px"
       >
         <BootstrapDialogTitle
           id="customized-dialog-title"
@@ -96,11 +94,11 @@ export default function SignUpModal() {
             handleStep={handleStep}
           /> */}
         </BootstrapDialogTitle>
-        <DialogContent>
-          {page === 2 && <SignUpModalScreen1 handlePageChange={handlePageChange} />}
-          {page === 1 && <SignUpModalScreen2 />}
-          {page === 3 && <SignUpFinalScreen />}
-        </DialogContent>
+        {page === 1 && (
+          <SignUpModalScreen1 handlePageChange={handlePageChange} />
+        )}
+        {page === 2 && <SignUpModalScreen2 />}
+        {page === 3 && <SignUpFinalScreen />}
       </BootstrapDialog>
     </div>
   );
