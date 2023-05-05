@@ -97,7 +97,9 @@ export default function SignUpModal() {
         {page === 1 && (
           <SignUpModalScreen1 handlePageChange={handlePageChange} />
         )}
-        {page === 2 && <SignUpModalScreen2 />}
+        {page === 2 && (
+          <SignUpModalScreen2 handlePageChange={handlePageChange} />
+        )}
         {page === 3 && <SignUpFinalScreen />}
       </BootstrapDialog>
     </div>

@@ -41,14 +41,15 @@ export default function LoginModal() {
             [theme.breakpoints.up("sm")]: {
               width: "528px",
             },
-            height: "610px",
+            height: "504px",
+            paddingTop: "33px",
           }}
         >
           <BootstrapDialogTitle
             id="customized-dialog-title"
             onClose={handleClose}
           >
-            <Box>
+            {/* <Box>
               <DotPagination
                 count={2}
                 page={page}
@@ -57,7 +58,7 @@ export default function LoginModal() {
                 hideNextButton
                 renderItem={(item) => <DotIcon item={item} />}
               />
-            </Box>
+            </Box> */}
             <DialogTitle>Login</DialogTitle>
           </BootstrapDialogTitle>
           <DialogContent>
