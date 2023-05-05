@@ -7,6 +7,7 @@ import {
   StyledSubText,
   StyledSubmitButton,
 } from "../UI/FormControls.styled";
+import { DialogTitle } from "../UI/ModalControls.styled";
 
 const SignUpModalScreen1 = ({ handlePageChange }) => {
   const [firstNameError, setFirstNameError] = useState(null);
@@ -54,6 +55,7 @@ const SignUpModalScreen1 = ({ handlePageChange }) => {
 
   return (
     <FormContainer component="form" noValidate autoComplete="off">
+      <DialogTitle>Sign up</DialogTitle>
       <StyledBox>
         <StyledTextField
           error={firstNameError}

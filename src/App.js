@@ -25,6 +25,9 @@ const theme = createTheme({
     muted: {
       color: "#939094",
     },
+    disabled: {
+      color: "#CCCCCC",
+    },
   },
   palette: {
     action: {

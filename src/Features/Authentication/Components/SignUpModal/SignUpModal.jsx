@@ -13,7 +13,6 @@ import {
   BootstrapDialog,
   DotIcon,
   DotPagination,
-  DialogTitle,
 } from "../UI/ModalControls.styled";
 
 const SignUpFinalScreen = () => {
@@ -91,7 +90,6 @@ export default function SignUpModal() {
               renderItem={(item) => <DotIcon item={item} />}
             />
           </Box>
-          <DialogTitle>Sign up</DialogTitle>
           {/* <SignUpStepper
             steps={steps}
             activeStep={activeStep}
@@ -99,8 +97,8 @@ export default function SignUpModal() {
           /> */}
         </BootstrapDialogTitle>
         <DialogContent>
-          {page === 1 && <SignUpModalScreen1 handlePageChange={handlePageChange} />}
-          {page === 2 && <SignUpModalScreen2 />}
+          {page === 2 && <SignUpModalScreen1 handlePageChange={handlePageChange} />}
+          {page === 1 && <SignUpModalScreen2 />}
           {page === 3 && <SignUpFinalScreen />}
         </DialogContent>
       </BootstrapDialog>
