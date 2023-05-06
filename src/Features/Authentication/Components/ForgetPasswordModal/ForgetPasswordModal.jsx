@@ -16,6 +16,7 @@ import {
 } from "../UI/ModalControls.styled";
 import ForgetPinScreen1 from "../ForgetPinScreen1/ForgetPinScreen1";
 import ForgetPinScreen3 from "../ForgetPinScreen3/ForgetPinScreen3";
+import ForgetPinScreen2 from "../ForgetPinScreen2/ForgetPinScreen2";
 
 const SignUpFinalScreen = () => {
   const [query, setQuery] = React.useState("idle");
@@ -65,6 +66,9 @@ export default function ForgetPasswordModal() {
   const handlePageChange = (event) => {
     if (page < 3) setPage(page + 1);
   };
+  const handlePageBack = (event) => {
+    if (page < 3) setPage(page - 1);
+  };
 
   return (
     <div>
@@ -84,7 +88,8 @@ export default function ForgetPasswordModal() {
           {page === 1 && (
             <ForgetPinScreen1 handlePageChange={handlePageChange} />
           )}
-          {page === 2 && (
+          {page === 2 && <ForgetPinScreen2 handlePageBack={handlePageBack} />}
+          {page === 3 && (
             <ForgetPinScreen3 handlePageChange={handlePageChange} />
           )}
         </Box>
