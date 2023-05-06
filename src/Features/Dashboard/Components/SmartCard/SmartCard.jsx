@@ -2,6 +2,7 @@ import { Card } from "@mui/material";
 import SmartCardHeader from "../SmartCardHeader/SmartCardHeader";
 import SmartTapCard from "../SmartTapCard/SmartTapCard";
 import GetCardNumber from "../GetCardNumber/GetCardNumber";
+import ManageChildren from "../ManageChildren/ManageChildren";
 
 const SmartCard = () => {
   return (
@@ -20,6 +21,7 @@ const SmartCard = () => {
       <SmartCardHeader />
       <SmartTapCard />
       <GetCardNumber />
+      <ManageChildren />
     </Card>
   );
 };
