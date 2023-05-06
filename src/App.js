@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 import LoginModal from "./Features/Authentication/Components/LoginModal/LoginModal";
 import SignUpModal from "./Features/Authentication/Components/SignUpModal/SignUpModal";
 import ForgetPasswordModal from "./Features/Authentication/Components/ForgetPasswordModal/ForgetPasswordModal";
-// import Dashboard from "./Features/Dashboard/Pages/Dashboard/Dashboard";
+import Dashboard from "./Features/Dashboard/Pages/Dashboard/Dashboard";
 
 const theme = createTheme({
   typography: {
@@ -71,10 +71,10 @@ function App() {
         {/* <Button onClick={() => dispatch(login({ userName: "user" }))}>
         Logged in
       </Button> */}
-        <LoginModal />
+        {/* <LoginModal />
         <SignUpModal />
-        <ForgetPasswordModal />
-        {/* <Dashboard /> */}
+        <ForgetPasswordModal /> */}
+        <Dashboard />
       </ThemeProvider>
     </div>
   );
