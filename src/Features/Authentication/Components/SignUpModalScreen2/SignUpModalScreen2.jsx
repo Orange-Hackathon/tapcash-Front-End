@@ -74,7 +74,7 @@ const SignUpModalScreen2 = ({ handlePageChange }) => {
             display: "flex",
             justifyContent: "space-between",
             width: "194px",
-            borderBottom: "1px solid #2196f3",
+            borderBottom: `1px solid ${theme.palette.gray.gray3}`,
           }}
         >
           <FiberManualRecordIcon

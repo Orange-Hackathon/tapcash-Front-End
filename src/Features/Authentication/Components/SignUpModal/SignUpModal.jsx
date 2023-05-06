@@ -61,7 +61,7 @@ export default function SignUpModal() {
   const handleClose = () => setOpen(false);
   const [page, setPage] = React.useState(1);
   const handlePageChange = (event) => {
-    setPage(page + 1);
+    if (page < 2) setPage(page + 1);
   };
 
   return (
@@ -88,11 +88,6 @@ export default function SignUpModal() {
               renderItem={(item) => <DotIcon item={item} />}
             />
           </Box>
-          {/* <SignUpStepper
-            steps={steps}
-            activeStep={activeStep}
-            handleStep={handleStep}
-          /> */}
         </BootstrapDialogTitle>
         {page === 1 && (
           <SignUpModalScreen1 handlePageChange={handlePageChange} />
@@ -100,7 +95,7 @@ export default function SignUpModal() {
         {page === 2 && (
           <SignUpModalScreen2 handlePageChange={handlePageChange} />
         )}
-        {page === 3 && <SignUpFinalScreen />}
+
       </BootstrapDialog>
     </div>
   );

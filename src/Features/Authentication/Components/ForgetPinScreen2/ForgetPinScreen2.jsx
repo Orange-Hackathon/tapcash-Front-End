@@ -5,7 +5,7 @@ import { useState } from "react";
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
 import { DialogTitle } from "../UI/ModalControls.styled";
 
-const ForgetPinScreen2 = ({ handlePageBack }) => {
+const ForgetPinScreen2 = ({ handlePageBack,handlePageChange }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
 
@@ -109,7 +109,11 @@ const ForgetPinScreen2 = ({ handlePageBack }) => {
           alignItems: "center",
         }}
       >
-        <StyledSubmitButton autoFocus variant="contained">
+        <StyledSubmitButton
+          onClick={handlePageChange}
+          autoFocus
+          variant="contained"
+        >
           Reset PIN
         </StyledSubmitButton>
         <Button
