@@ -1,6 +1,14 @@
-import { Box, Container, Grid, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import Insights from "../Insights/Insights";
-
+import bell from "../../Assets/bell.svg";
+import SmartCard from "../SmartCard/SmartCard";
 const DashboardSection = () => {
   const theme = useTheme();
   return (
@@ -11,23 +19,42 @@ const DashboardSection = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
-          variant="h4"
-          sx={{
-            fontSize: "20px",
-            color: theme.palette.gray.gray2,
-            marginTop: "69px",
-            marginBottom: "50px",
-          }}
-        >
-          Dashboard
-        </Typography>
         <Grid container spacing={2}>
           <Grid item xs={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "50px",
+                marginBottom: "50px",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  fontSize: "20px",
+                  color: theme.palette.gray.gray2,
+                }}
+              >
+                Dashboard
+              </Typography>
+              <Button
+                sx={{
+                  borderRadius: "48px",
+                  width: "64px",
+                  height: "64px",
+                  backgroundColor: theme.palette.white.main,
+                }}
+                color="white"
+              >
+                <img src={bell} alt="bell" />
+              </Button>
+            </Box>
             <Insights />
           </Grid>
           <Grid item xs={6}>
-            <Insights />
+            <SmartCard />
           </Grid>
         </Grid>
       </Container>

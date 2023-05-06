@@ -7,7 +7,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import { StyledDrawer } from "./Dashboard.styled";
 import DashboardSection from "../../Components/DashboardSection/DashboardSection";
 import logo from "../../Assets/logo.svg";
@@ -87,7 +86,7 @@ const Dashboard = () => {
               >
                 <Tab
                   sx={{
-                    fontSize: "24px",
+                    fontSize: "20px",
                     fontWeight: "400",
                     lineHeight: "32px",
                     justifyContent: "flex-start",
@@ -108,7 +107,7 @@ const Dashboard = () => {
                 />
                 <Tab
                   sx={{
-                    fontSize: "24px",
+                    fontSize: "20px",
                     fontWeight: "400",
                     lineHeight: "32px",
                     justifyContent: "flex-start",
@@ -135,7 +134,7 @@ const Dashboard = () => {
         <List>
           <Tab
             sx={{
-              fontSize: "24px",
+              fontSize: "20px",
               fontWeight: "400",
               lineHeight: "32px",
               justifyContent: "flex-start",
