@@ -14,7 +14,8 @@ import {
   DotIcon,
   DotPagination,
 } from "../UI/ModalControls.styled";
-import ForgetPasswordScreen1 from "../ForgetPasswordScreen1/ForgetPasswordScreen1";
+import ForgetPinScreen1 from "../ForgetPinScreen1/ForgetPinScreen1";
+import ForgetPinScreen3 from "../ForgetPinScreen3/ForgetPinScreen3";
 
 const SignUpFinalScreen = () => {
   const [query, setQuery] = React.useState("idle");
@@ -62,7 +63,7 @@ export default function ForgetPasswordModal() {
   const handleClose = () => setOpen(false);
   const [page, setPage] = React.useState(1);
   const handlePageChange = (event) => {
-    setPage(page + 1);
+    if (page < 3) setPage(page + 1);
   };
 
   return (
@@ -80,7 +81,12 @@ export default function ForgetPasswordModal() {
           onClose={handleClose}
         ></BootstrapDialogTitle>
         <Box>
-          <ForgetPasswordScreen1 />
+          {page === 1 && (
+            <ForgetPinScreen1 handlePageChange={handlePageChange} />
+          )}
+          {page === 2 && (
+            <ForgetPinScreen3 handlePageChange={handlePageChange} />
+          )}
         </Box>
       </BootstrapDialog>
     </div>

@@ -3,7 +3,7 @@ import { StyledSubmitButton, StyledTextField } from "../UI/FormControls.styled";
 import { useState } from "react";
 
 import lock from "../../Assets/lock.svg";
-const ForgetPasswordScreen1 = () => {
+const ForgetPinScreen1 = ({ handlePageChange }) => {
   const [emailError, setEmailError] = useState(null);
   const [email, setEmail] = useState("");
 
@@ -106,6 +106,7 @@ const ForgetPasswordScreen1 = () => {
           autoFocus
           variant="contained"
           disabled={emailError || !email}
+          onClick={() => handlePageChange()}
         >
           Send instructions
         </StyledSubmitButton>
@@ -114,4 +115,4 @@ const ForgetPasswordScreen1 = () => {
   );
 };
 
-export default ForgetPasswordScreen1;
+export default ForgetPinScreen1;
