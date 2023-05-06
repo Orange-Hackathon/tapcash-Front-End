@@ -1,9 +1,28 @@
-import { Typography, Card, Container, Box, Button } from "@mui/material";
+import {
+  Typography,
+  Card,
+  Container,
+  Box,
+  Button,
+  useTheme,
+} from "@mui/material";
 import TransactionItem from "../TransactionItem/TransactionItem";
 import AddIcon from "@mui/icons-material/Add";
 const Transactions = () => {
+  const theme = useTheme();
   return (
-    <Card>
+    <Card
+      sx={{
+        width: "550px",
+        boxShadow: " 0px 0px 50px rgba(0, 0, 0, 0.1)",
+        borderRadius: "24px",
+        marginRight: "20px",
+        marginTop: "70px",
+        paddingLeft: "24px",
+        paddingRight: "24px",
+        paddingTop: "33px",
+      }}
+    >
       <Container sx={{ padding: "20px" }}>
         <Box
           sx={{
@@ -11,7 +30,16 @@ const Transactions = () => {
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="h4">Transactions</Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "500",
+              fontSize: "16px",
+              color: theme.palette.gray.body1,
+            }}
+          >
+            Transactions
+          </Typography>
           <Button sx={{ borderRadius: 16 }}>
             <AddIcon />
           </Button>

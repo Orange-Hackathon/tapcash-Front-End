@@ -7,7 +7,6 @@ const InsightsChart = () => {
     <Card
       sx={{
         width: "550px",
-        height: "280px",
         boxShadow: " 0px 0px 50px rgba(0, 0, 0, 0.1)",
         borderRadius: "24px",
         marginRight: "20px",
@@ -35,6 +34,20 @@ const InsightsChart = () => {
           ],
         }}
         labels="months"
+        options={{
+          scales: {
+            x: {
+              grid: {
+                display: false,
+              },
+            },
+            y: {
+              grid: {
+                display: false,
+              },
+            },
+          },
+        }}
       />
     </Card>
   );
