@@ -49,16 +49,6 @@ export default function LoginModal() {
             id="customized-dialog-title"
             onClose={handleClose}
           >
-            {/* <Box>
-              <DotPagination
-                count={2}
-                page={page}
-                onChange={handleChange}
-                hidePrevButton
-                hideNextButton
-                renderItem={(item) => <DotIcon item={item} />}
-              />
-            </Box> */}
             <DialogTitle>Login</DialogTitle>
           </BootstrapDialogTitle>
           <DialogContent>

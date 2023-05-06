@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 // import { Button } from "@mui/material";
 import LoginModal from "./Features/Authentication/Components/LoginModal/LoginModal";
 import SignUpModal from "./Features/Authentication/Components/SignUpModal/SignUpModal";
+import ForgetPasswordModal from "./Features/Authentication/Components/ForgetPasswordModal/ForgetPasswordModal";
 // import Dashboard from "./Features/Dashboard/Pages/Dashboard/Dashboard";
 
 const theme = createTheme({
@@ -39,6 +40,18 @@ const theme = createTheme({
     primary: {
       main: "#333E96",
     },
+    secondary: {
+      main: "#561D25",
+    },
+    success: {
+      main: "#358600",
+    },
+    gray: {
+      gray1: "#CCCCCC",
+      gray2: "#939094",
+      gray3: "#6D6D6D",
+      gray4: "#E3E3E4",
+    },
   },
 });
 /**
@@ -60,6 +73,7 @@ function App() {
       </Button> */}
         <LoginModal />
         <SignUpModal />
+        <ForgetPasswordModal />
         {/* <Dashboard /> */}
       </ThemeProvider>
     </div>

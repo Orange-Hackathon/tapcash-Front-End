@@ -18,16 +18,16 @@ export const StyledTextField = styled(TextField)(({ theme, isError }) => ({
     margin: "auto",
     marginTop: "20px",
     "&:hover:before": {
-      border: "0px",
+      border: "0px !important",
     },
     "&:before": {
-      border: "0px",
+      border: "0px !important",
     },
     "&:hover:after": {
-      border: "0px",
+      border: "0px !important",
     },
     "&:after": {
-      border: "0px",
+      border: "0px !important",
     },
     [theme.breakpoints.up("xs")]: {
       width: "100%",

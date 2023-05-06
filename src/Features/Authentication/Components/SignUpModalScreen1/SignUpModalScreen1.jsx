@@ -46,10 +46,8 @@ const SignUpModalScreen1 = ({ handlePageChange }) => {
   };
 
   const handleEmailChange = (e) => {
-    if (e.target.value.length < 3)
-      setEmailError("Password must be at least 3 characters long");
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value))
-      setEmailError("Password must contain special characters");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value))
+      setEmailError("Email must be a valid email address");
     else setEmailError(null);
     setEmail(e.target.value);
   };
