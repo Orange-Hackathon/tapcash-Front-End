@@ -16,6 +16,13 @@ import LoginModal from "./Features/Authentication/Components/LoginModal/LoginMod
 import SignUpModal from "./Features/Authentication/Components/SignUpModal/SignUpModal";
 import ForgetPasswordModal from "./Features/Authentication/Components/ForgetPasswordModal/ForgetPasswordModal";
 import Dashboard from "./Features/Dashboard/Pages/Dashboard/Dashboard";
+import {
+  Routes,
+  Route,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import LandingPage from "./Features/Landing/Pages/LandingPage/LandingPage";
 
 const theme = createTheme({
   typography: {
@@ -66,18 +73,31 @@ function App() {
   const { userName } = useSelector((state) => state.user);
   // const dispatch = useDispatch();
   console.log(userName);
-
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <LandingPage />,
+      errorElement: <h1>Error in LandingPage</h1>,
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
+      errorElement: <h1>Error in dashboard</h1>,
+    },
+  ]);
   return (
     <div>
       <CssBaseline />
       <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+
         {/* <Button onClick={() => dispatch(login({ userName: "user" }))}>
         Logged in
       </Button> */}
         {/* <LoginModal />
         <SignUpModal />
         <ForgetPasswordModal /> */}
-        <Dashboard />
+        {/* <Dashboard /> */}
       </ThemeProvider>
     </div>
   );
