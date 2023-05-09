@@ -13,6 +13,8 @@ import ChildrenList from "../../Components/ChildrenList/ChildrenList";
 import ChildBalance from "../../Components/ChildBalance/ChildBalance";
 import ChildLimit from "../../Components/ChildLimit/ChildLimit";
 import ChildAllowance from "../../Components/ChildAllowance/ChildAllowance";
+import ChildCategories from "../../Components/ChildCategories/ChildCategories";
+import ChildTransactions from "../../Components/ChildTransactions/ChildTransactions";
 
 const ManageChildren = ({ handleChange }) => {
   const theme = useTheme();
@@ -98,6 +100,13 @@ const ManageChildren = ({ handleChange }) => {
               <Box>
                 <ChildAllowance />
               </Box>
+            </Box>
+            <Box sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}>
+              <ChildCategories />
+              <ChildTransactions />
             </Box>
           </CardContent>
         </Card>
