@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import logo from "../../../../Assets/logo.svg";
 import SignUpModal from "../../../Authentication/Components/SignUpModal/SignUpModal";
 import LoginModal from "../../../Authentication/Components/LoginModal/LoginModal";
@@ -15,8 +15,8 @@ const Header = () => {
     >
       <img src={logo} alt="logo" />
       <Box sx={{ display: "flex" }}>
-        <LoginModal />
         <SignUpModal />
+        <LoginModal />
       </Box>
     </Box>
   );

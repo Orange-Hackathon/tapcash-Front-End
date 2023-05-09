@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import { useEffect, useRef, useState } from "react";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { DialogTitle } from "../UI/ModalControls.styled";
-import { useTheme } from "@mui/material";
+import { Alert, useTheme } from "@mui/material";
 import { StyledSubmitButton } from "../UI/FormControls.styled";
 import { useNavigate } from "react-router-dom";
 
@@ -22,10 +22,7 @@ const SignUpModalScreen2 = ({ handlePageChange }) => {
       ref.current = ref.current + String(e.keyCode - 48);
     }
   };
-  useEffect(() => {
-    if (ref.current.length !== 4) setPinError("Pin must be 4 characters long");
-    else setPinError(null);
-  }, [pin]);
+
   useEffect(() => {
     document.addEventListener("keydown", handlePinChange);
     return () => {
@@ -34,18 +31,16 @@ const SignUpModalScreen2 = ({ handlePageChange }) => {
   }, []);
 
   const handleStepChange = () => {
-    if (step === 1) setStep(2);
+    setStep((prev) => prev + 1);
     setConfirmPin(pin);
     setPin("");
     ref.current = "";
     if (step === 2) {
-      if (pin === confirmPin) handlePageChange(3);
+      if (pin === confirmPin) navigate("/dashboard");
       else {
         setStep(1);
-        console.log("pin not match");
+        setPinError("Pin does not match");
       }
-    } else {
-      navigate("/dashboard");
     }
   };
   return (
@@ -68,12 +63,24 @@ const SignUpModalScreen2 = ({ handlePageChange }) => {
       noValidate
       autoComplete="off"
     >
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <DialogTitle>Create PIN</DialogTitle>
-
         <Box
           sx={{
-            marginTop: "83px",
+            marginTop: "24px",
+          }}
+        >
+          {pinError && <Alert severity="error">{pinError}</Alert>}
+        </Box>
+        <Box
+          sx={{
+            marginTop: "40px",
             paddingBottom: "18px",
             display: "flex",
             justifyContent: "space-between",
@@ -131,7 +138,7 @@ const SignUpModalScreen2 = ({ handlePageChange }) => {
         <StyledSubmitButton
           autoFocus
           variant="contained"
-          disabled={pinError || !pin}
+          disabled={!pin || pin.length < 4}
           onClick={handleStepChange}
         >
           {step === 1 ? "Confirm" : "Sign Up"}

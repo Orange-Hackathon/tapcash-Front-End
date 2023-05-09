@@ -6,9 +6,9 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import Insights from "../Insights/Insights";
+import Insights from "../../Components/Insights/Insights";
 import bell from "../../Assets/bell.svg";
-import SmartCard from "../SmartCard/SmartCard";
+import SmartCard from "../../Components/SmartCard/SmartCard";
 const DashboardSection = () => {
   const theme = useTheme();
   return (

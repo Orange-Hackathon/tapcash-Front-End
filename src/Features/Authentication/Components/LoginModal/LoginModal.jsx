@@ -34,6 +34,7 @@ export default function LoginModal() {
           height: "65px",
           borderRadius: "24px",
           fontWeight: "500",
+          marginLeft: "10px",
           fontSize: "16px",
         }}
         variant="contained"

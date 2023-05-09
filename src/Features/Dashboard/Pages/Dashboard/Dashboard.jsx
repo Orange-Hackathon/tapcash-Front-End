@@ -8,7 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { StyledDrawer } from "./Dashboard.styled";
-import DashboardSection from "../../Components/DashboardSection/DashboardSection";
+import DashboardSection from "../DashboardSection/DashboardSection";
 import logo from "../../Assets/logo.svg";
 
 import PropTypes from "prop-types";
@@ -18,6 +18,7 @@ import Tab from "@mui/material/Tab";
 import profile from "../../Assets/profile.svg";
 import logout from "../../Assets/logout.svg";
 import dashboard from "../../Assets/dashboard.svg";
+import Profile from "../Profile/Profile";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -156,7 +157,8 @@ const Dashboard = () => {
           />
         </List>
       </StyledDrawer>
-      <DashboardSection />
+      {value === 0 && <DashboardSection />}
+      {value === 1 && <Profile />}
     </Box>
   );
 };

@@ -73,10 +73,7 @@ export default function SignUpModal() {
           borderRadius: "24px",
           fontWeight: "500",
           fontSize: "16px",
-          marginLeft: "10px",
         }}
-        variant="contained"
-        color="primary"
         onClick={handleOpen}
       >
         Sign up
