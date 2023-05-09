@@ -31,7 +31,7 @@ const SendSection = () => {
         </Box>
       </Box>
       <Box>
-        <Typography component="h1" sx={{ fontWeight: "600", fontSize: "50px" }}>
+        <Typography component="h1" sx={{ fontWeight: "600", fontSize: "35px" }}>
           Send to friends
         </Typography>
         <Typography

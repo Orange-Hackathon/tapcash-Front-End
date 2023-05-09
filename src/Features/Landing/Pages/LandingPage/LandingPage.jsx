@@ -4,6 +4,9 @@ import HomeSection from "../../Components/HomeSection/HomeSection";
 import SendSection from "../../Components/SendSection/SendSection";
 import SmartCardSection from "../../Components/SmartCardSection/SmartCardSection";
 import InsightsSection from "../../Components/InsightsSection/InsightsSection";
+import Transactions from "../../Components/Transactions/Transactions";
+import Children from "../../Components/Children/Children";
+import Footer from "../../Components/Footer/Footer";
 
 const LandingPage = () => {
   return (
@@ -19,7 +22,10 @@ const LandingPage = () => {
       <HomeSection />
       <SendSection />
       <SmartCardSection />
-      <InsightsSection/>
+      <Transactions />
+      <InsightsSection />
+      <Children />
+      <Footer />
     </Box>
   );
 };

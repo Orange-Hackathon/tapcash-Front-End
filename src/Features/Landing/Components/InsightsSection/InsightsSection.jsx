@@ -12,6 +12,14 @@ const InsightsSection = () => {
         alignItems: "center",
       }}
     >
+      <Box>
+        <Typography
+          component="h1"
+          sx={{ fontWeight: "600", fontSize: "35px", width: "420px" }}
+        >
+          Track your spending with your dashboard
+        </Typography>
+      </Box>
       <Box
         sx={{
           display: "flex",
@@ -20,14 +28,6 @@ const InsightsSection = () => {
         <Box>
           <img src={Insights} alt="Insights" />
         </Box>
-      </Box>
-      <Box>
-        <Typography
-          component="h1"
-          sx={{ fontWeight: "600", fontSize: "50px", width: "420px" }}
-        >
-          Track your spending with your dashboard
-        </Typography>
       </Box>
     </Box>
   );

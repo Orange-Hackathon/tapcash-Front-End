@@ -15,11 +15,11 @@ const Header = () => {
       <img src={logo} alt="logo" />
       <Button
         sx={{
-          width: "167px",
-          height: "76px",
+          width: "150px",
+          height: "65px",
           borderRadius: "24px",
           fontWeight: "500",
-          fontSize: "20px",
+          fontSize: "16px",
         }}
         variant="contained"
         color="primary"

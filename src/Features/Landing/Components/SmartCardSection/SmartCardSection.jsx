@@ -13,7 +13,7 @@ const SmartCardSection = () => {
       }}
     >
       <Box>
-        <Typography component="h1" sx={{ fontWeight: "600", fontSize: "50px" }}>
+        <Typography component="h1" sx={{ fontWeight: "600", fontSize: "35px" }}>
           Your smart card
         </Typography>
         <Typography

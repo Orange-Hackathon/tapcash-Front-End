@@ -32,7 +32,6 @@ const HomeSection = () => {
             }}
             color="primary"
           >
-            {" "}
             tap
           </Typography>
         </Typography>
