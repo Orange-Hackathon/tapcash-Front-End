@@ -9,7 +9,7 @@ const ChildBalance = () => {
         justifyContent: "space-between",
         backgroundColor: "primary.main",
         width: "382px",
-        height: "134px",
+        height: "144px",
         borderRadius: "24px",
         padding: "48px",
         alignItems: "center",

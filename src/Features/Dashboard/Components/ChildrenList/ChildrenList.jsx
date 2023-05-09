@@ -19,7 +19,7 @@ const ChildrenList = () => {
         sx={{
           borderRadius: "48px",
           marginLeft: "20px",
-          backgroundColor: theme.palette.gray.gray2,
+          backgroundColor: theme.palette.gray.gray4,
         }}
       >
         <AddIcon style={{ fontSize: 35 }} />

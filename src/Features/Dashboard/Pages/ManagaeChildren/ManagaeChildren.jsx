@@ -7,19 +7,19 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import SmartCardHeader from "../../Components/SmartCardHeader/SmartCardHeader";
-import PersonalInfo from "../../Components/PersonalInfo/PersonalInfo";
 import bell from "../../Assets/bell.svg";
 import profile from "../../Assets/profile.svg";
 import ChildrenList from "../../Components/ChildrenList/ChildrenList";
 import ChildBalance from "../../Components/ChildBalance/ChildBalance";
+import ChildLimit from "../../Components/ChildLimit/ChildLimit";
+import ChildAllowance from "../../Components/ChildAllowance/ChildAllowance";
 
 const ManageChildren = ({ handleChange }) => {
   const theme = useTheme();
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.gray.gray4,
+        backgroundColor: theme.palette.background.muted,
         width: "100%",
         height: "100vh",
       }}
@@ -83,8 +83,21 @@ const ManageChildren = ({ handleChange }) => {
           }}
         >
           <CardContent sx={{ padding: "0" }}>
-            <Box>
-              <ChildBalance />
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Box>
+                <ChildBalance />
+              </Box>
+              <Box>
+                <ChildLimit />
+              </Box>
+              <Box>
+                <ChildAllowance />
+              </Box>
             </Box>
           </CardContent>
         </Card>

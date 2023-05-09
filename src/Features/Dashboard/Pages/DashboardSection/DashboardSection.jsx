@@ -14,7 +14,7 @@ const DashboardSection = () => {
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.gray.gray4,
+        backgroundColor: theme.palette.background.muted,
         width: "100%",
       }}
     >
