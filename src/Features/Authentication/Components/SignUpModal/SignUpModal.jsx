@@ -66,7 +66,21 @@ export default function SignUpModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Sign up</Button>
+      <Button
+        sx={{
+          width: "150px",
+          height: "65px",
+          borderRadius: "24px",
+          fontWeight: "500",
+          fontSize: "16px",
+          marginLeft: "10px",
+        }}
+        variant="contained"
+        color="primary"
+        onClick={handleOpen}
+      >
+        Sign up
+      </Button>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -95,7 +109,6 @@ export default function SignUpModal() {
         {page === 2 && (
           <SignUpModalScreen2 handlePageChange={handlePageChange} />
         )}
-
       </BootstrapDialog>
     </div>
   );

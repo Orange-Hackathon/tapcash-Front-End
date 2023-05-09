@@ -1,6 +1,7 @@
 import { Box, Button } from "@mui/material";
 import logo from "../../../../Assets/logo.svg";
-
+import SignUpModal from "../../../Authentication/Components/SignUpModal/SignUpModal";
+import LoginModal from "../../../Authentication/Components/LoginModal/LoginModal";
 
 const Header = () => {
   return (
@@ -13,19 +14,10 @@ const Header = () => {
       }}
     >
       <img src={logo} alt="logo" />
-      <Button
-        sx={{
-          width: "150px",
-          height: "65px",
-          borderRadius: "24px",
-          fontWeight: "500",
-          fontSize: "16px",
-        }}
-        variant="contained"
-        color="primary"
-      >
-        Signup
-      </Button>
+      <Box sx={{ display: "flex" }}>
+        <LoginModal />
+        <SignUpModal />
+      </Box>
     </Box>
   );
 };

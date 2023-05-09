@@ -4,8 +4,10 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { DialogTitle } from "../UI/ModalControls.styled";
 import { useTheme } from "@mui/material";
 import { StyledSubmitButton } from "../UI/FormControls.styled";
+import { useNavigate } from "react-router-dom";
 
 const SignUpModalScreen2 = ({ handlePageChange }) => {
+  const navigate = useNavigate();
   const [pinError, setPinError] = useState(null);
   const [pin, setPin] = useState("");
   const [confirmPin, setConfirmPin] = useState("");
@@ -42,6 +44,8 @@ const SignUpModalScreen2 = ({ handlePageChange }) => {
         setStep(1);
         console.log("pin not match");
       }
+    } else {
+      navigate("/dashboard");
     }
   };
   return (

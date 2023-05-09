@@ -12,19 +12,36 @@ import {
   DotPagination,
   DialogTitle,
 } from "../UI/ModalControls.styled";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginModal() {
+  let navigate = useNavigate();
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [page, setPage] = React.useState(1);
+  // const [page, setPage] = React.useState(1);
   const handleChange = (event) => {
-    setPage(page + 1);
+    // setPage(page + 1);
+    navigate("/dashboard");
   };
   const theme = useTheme();
   return (
     <div>
-      <Button onClick={handleOpen}>Login</Button>{" "}
+      <Button
+        sx={{
+          width: "150px",
+          height: "65px",
+          borderRadius: "24px",
+          fontWeight: "500",
+          fontSize: "16px",
+        }}
+        variant="contained"
+        color="primary"
+        onClick={handleOpen}
+      >
+        Login
+      </Button>{" "}
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
