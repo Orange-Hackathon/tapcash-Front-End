@@ -11,13 +11,16 @@ const InsightsCard = ({ children, title }) => {
     <Card
       sx={{
         width: "170px",
-        height: "176px",
+        height: "156px",
         boxShadow: " 0px 0px 50px rgba(0, 0, 0, 0.1)",
         borderRadius: "24px",
         marginRight: "20px",
-        paddingLeft: "24px",
-        paddingRight: "24px",
+        paddingLeft: "14px",
+        paddingRight: "14px",
         paddingTop: "33px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       <CardContent sx={{ padding: "0" }}>

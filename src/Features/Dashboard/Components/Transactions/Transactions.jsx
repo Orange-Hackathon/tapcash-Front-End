@@ -17,7 +17,7 @@ const Transactions = () => {
         boxShadow: " 0px 0px 50px rgba(0, 0, 0, 0.1)",
         borderRadius: "24px",
         marginRight: "20px",
-        marginTop: "70px",
+        marginTop: "20px",
         paddingLeft: "24px",
         paddingRight: "24px",
         paddingTop: "33px",

@@ -13,10 +13,13 @@ const Insights = () => {
         <Grid container>
           <Grid item xs={4}>
             <InsightsCard title="Balance">
-              <Typography variant="h5" sx={{ padding: "0" }}>
+              <Typography variant="h5" sx={{ padding: "0", fontSize: "20px" }}>
                 10,000
               </Typography>
-              <Typography variant="h5" sx={{ padding: "0", marginLeft: "0px" }}>
+              <Typography
+                variant="h5"
+                sx={{ padding: "0", marginLeft: "0px", fontSize: "20px" }}
+              >
                 EGY
               </Typography>
             </InsightsCard>

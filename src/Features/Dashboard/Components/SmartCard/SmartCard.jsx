@@ -15,7 +15,7 @@ const SmartCard = () => {
         paddingLeft: "48px",
         paddingRight: "48px",
         paddingTop: "32px",
-        marginTop: "48px",
+        marginTop: "20px",
       }}
     >
       <SmartCardHeader />

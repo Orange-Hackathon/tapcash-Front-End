@@ -9,7 +9,12 @@ import {
 } from "@mui/material";
 import SmartCardHeader from "../../Components/SmartCardHeader/SmartCardHeader";
 import PersonalInfo from "../../Components/PersonalInfo/PersonalInfo";
-const Profile = ({ handleChange }) => {
+import bell from "../../Assets/bell.svg";
+import profile from "../../Assets/profile.svg";
+import ChildrenList from "../../Components/ChildrenList/ChildrenList";
+import ChildBalance from "../../Components/ChildBalance/ChildBalance";
+
+const ManageChildren = ({ handleChange }) => {
   const theme = useTheme();
   return (
     <Box
@@ -24,8 +29,7 @@ const Profile = ({ handleChange }) => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            marginTop: "50px",
-            marginBottom: "50px",
+            marginTop: "20px",
             alignItems: "center",
           }}
         >
@@ -36,9 +40,36 @@ const Profile = ({ handleChange }) => {
               color: theme.palette.gray.gray2,
             }}
           >
-            Profile
+            Manage children
           </Typography>
+          <Box>
+            <Button
+              sx={{
+                borderRadius: "48px",
+                width: "64px",
+                height: "64px",
+                backgroundColor: theme.palette.white.main,
+              }}
+              color="white"
+            >
+              <img src={bell} alt="bell" />
+            </Button>
+            <Button
+              sx={{
+                borderRadius: "48px",
+                width: "64px",
+                height: "64px",
+                marginLeft: "20px",
+                backgroundColor: theme.palette.white.main,
+              }}
+              color="white"
+            >
+              <img src={profile} alt="profile" />
+            </Button>
+          </Box>
         </Box>
+        <ChildrenList />
+
         <Card
           sx={{
             height: "500px",
@@ -48,25 +79,13 @@ const Profile = ({ handleChange }) => {
             paddingLeft: "50px",
             paddingRight: "24px",
             paddingTop: "33px",
+            marginTop: "15px",
           }}
         >
           <CardContent sx={{ padding: "0" }}>
-            <SmartCardHeader />
-            <PersonalInfo />
-            <Button
-              sx={{
-                height: "55px",
-                borderRadius: "13px",
-                fontWeight: "500",
-                fontSize: "14px",
-                marginTop: "30px",
-              }}
-              variant="contained"
-              color="primary"
-              onClick={(e) => handleChange(e,2)}
-            >
-              Manage children
-            </Button>
+            <Box>
+              <ChildBalance />
+            </Box>
           </CardContent>
         </Card>
       </Container>
@@ -74,4 +93,4 @@ const Profile = ({ handleChange }) => {
   );
 };
 
-export default Profile;
+export default ManageChildren;

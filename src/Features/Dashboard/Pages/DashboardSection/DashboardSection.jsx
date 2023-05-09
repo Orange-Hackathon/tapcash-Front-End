@@ -25,8 +25,8 @@ const DashboardSection = () => {
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
-                marginTop: "50px",
-                marginBottom: "50px",
+                marginTop: "20px",
+                marginBottom: "20px",
                 alignItems: "center",
               }}
             >

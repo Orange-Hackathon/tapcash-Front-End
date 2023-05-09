@@ -19,6 +19,9 @@ import profile from "../../Assets/profile.svg";
 import logout from "../../Assets/logout.svg";
 import dashboard from "../../Assets/dashboard.svg";
 import Profile from "../Profile/Profile";
+import { Route, Routes, useRoutes } from "react-router";
+import { Link } from "react-router-dom";
+import ManageChildren from "../ManagaeChildren/ManagaeChildren";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -52,22 +55,23 @@ function a11yProps(index) {
   };
 }
 
-const CustomListItem = ({ text, icon }) => {
-  return (
-    <ListItem disablePadding>
-      <ListItemButton>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItemButton>
-    </ListItem>
-  );
-};
 const Dashboard = () => {
   const [value, setValue] = React.useState(0);
+  const [page, setPage] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    console.log("newValue = ", newValue);
+    if (newValue < 2) setValue(newValue);
+    setPage(newValue);
   };
+  console.log(page);
+
+  const routes = [
+    { path: "/", element: <DashboardSection />, exact: true },
+    { path: "/*", element: <Profile /> },
+  ];
+  const routing = useRoutes(routes);
+
   return (
     <Box sx={{ display: "flex" }}>
       <StyledDrawer variant="permanent" anchor="left">
@@ -126,6 +130,7 @@ const Dashboard = () => {
                     />
                   }
                   {...a11yProps(1)}
+                  {...a11yProps(2)}
                 />
               </Tabs>
             </Box>
@@ -157,8 +162,10 @@ const Dashboard = () => {
           />
         </List>
       </StyledDrawer>
-      {value === 0 && <DashboardSection />}
-      {value === 1 && <Profile />}
+      {/* {routing} */}
+      {page === 0 && <DashboardSection />}
+      {page === 1 && <Profile handleChange={handleChange} />}
+      {page === 2 && <ManageChildren handleChange={handleChange} />}
     </Box>
   );
 };

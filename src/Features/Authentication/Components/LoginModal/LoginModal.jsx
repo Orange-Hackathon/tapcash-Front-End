@@ -42,7 +42,7 @@ export default function LoginModal() {
         onClick={handleOpen}
       >
         Login
-      </Button>{" "}
+      </Button>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

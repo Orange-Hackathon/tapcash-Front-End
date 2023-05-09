@@ -1,6 +1,8 @@
-import { Typography, Box, useTheme } from "@mui/material";
+import { Typography, Box, useTheme, Button } from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 const Info = ({ title, value }) => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -9,6 +11,9 @@ const Info = ({ title, value }) => {
         justifyContent: "space-between",
         width: "40%",
         marginTop: "20px",
+        [theme.breakpoints.down("lg")]: {
+          width: "100%",
+        },
       }}
     >
       <Typography variant="h5" sx={{ fontWeight: "500", fontSize: "16px" }}>
