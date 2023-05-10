@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 import Insights from "../../Assets/Insights 1.png";
 const InsightsSection = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -10,9 +11,18 @@ const InsightsSection = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        [theme.breakpoints.down("lg")]: {
+          flexDirection: "column",
+        },
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          [theme.breakpoints.down("lg")]: {
+            marginBottom: "50px",
+          },
+        }}
+      >
         <Typography
           component="h1"
           sx={{ fontWeight: "600", fontSize: "35px", width: "420px" }}

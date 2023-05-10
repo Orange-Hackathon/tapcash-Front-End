@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 import transactions from "../../Assets/transactions.png";
 const Transactions = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -10,11 +11,17 @@ const Transactions = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        [theme.breakpoints.down("lg")]: {
+          flexDirection: "column",
+        },
       }}
     >
       <Box
         sx={{
           display: "flex",
+          [theme.breakpoints.down("lg")]: {
+            marginBottom: "50px",
+          },
         }}
       >
         <Box

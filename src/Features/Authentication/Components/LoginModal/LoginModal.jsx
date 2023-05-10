@@ -1,17 +1,11 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import LoginForm from "../LoginForm/LoginForm";
-
 import DialogContent from "@mui/material/DialogContent";
 
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
 import { Box, useTheme } from "@mui/material";
-import {
-  BootstrapDialog,
-  DotIcon,
-  DotPagination,
-  DialogTitle,
-} from "../UI/ModalControls.styled";
+import { BootstrapDialog, DialogTitle } from "../UI/ModalControls.styled";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginModal() {

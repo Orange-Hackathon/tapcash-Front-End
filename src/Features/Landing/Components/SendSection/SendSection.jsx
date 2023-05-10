@@ -1,8 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 import send1 from "../../Assets/send 1.png";
 import send2 from "../../Assets/send 2.png";
 const SendSection = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -11,6 +12,9 @@ const SendSection = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        [theme.breakpoints.down("lg")]: {
+          flexDirection: "column",
+        },
       }}
     >
       <Box

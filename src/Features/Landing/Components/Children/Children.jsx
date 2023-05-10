@@ -1,8 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 import children2 from "../../Assets/children2.png";
 import children1 from "../../Assets/children1.png";
 const Children = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -11,11 +12,17 @@ const Children = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        [theme.breakpoints.down("lg")]: {
+          flexDirection: "column",
+        },
       }}
     >
       <Box
         sx={{
           display: "flex",
+          [theme.breakpoints.down("lg")]: {
+            marginBottom: "100px",
+          },
         }}
       >
         <Box

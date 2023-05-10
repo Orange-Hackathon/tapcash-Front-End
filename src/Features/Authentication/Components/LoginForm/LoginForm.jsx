@@ -6,6 +6,7 @@ import {
   StyledBox,
   StyledSubText,
 } from "../UI/FormControls.styled";
+import ForgetPasswordModal from "../ForgetPasswordModal/ForgetPasswordModal";
 
 const LoginForm = ({ handleChange }) => {
   const [phoneNumberError, setPhoneNumberError] = useState(null);
@@ -52,9 +53,7 @@ const LoginForm = ({ handleChange }) => {
           onChange={handlePinChange}
           value={pin}
         />
-        <StyledSubText variant="muted" component="a">
-          Forgot PIN?
-        </StyledSubText>
+        <ForgetPasswordModal />
         <StyledSubmitButton
           autoFocus
           onClick={handleChange}

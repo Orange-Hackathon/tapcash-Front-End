@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 import home1 from "../../Assets/Home 1.png";
 import home2 from "../../Assets/Home 2.png";
 import QR from "../../Assets/QR-code.svg";
 import googlePlay from "../../Assets/Google Play Button.svg";
 const HomeSection = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -12,6 +13,9 @@ const HomeSection = () => {
         display: "flex",
         justifyContent: "space-between",
         marginTop: "197px",
+        [theme.breakpoints.down("lg")]: {
+          flexDirection: "column",
+        },
       }}
     >
       <Box>
@@ -64,16 +68,17 @@ const HomeSection = () => {
             marginTop: "45px",
           }}
         >
-          <img
-            src={googlePlay}
-            alt="googlePlay"
-          />
+          <img src={googlePlay} alt="googlePlay" />
           <img src={QR} alt="QR" />
         </Box>
       </Box>
       <Box
         sx={{
           display: "flex",
+          [theme.breakpoints.down("lg")]: {
+            marginTop: "100px",
+            marginBottom: "100px",
+          },
         }}
       >
         <Box

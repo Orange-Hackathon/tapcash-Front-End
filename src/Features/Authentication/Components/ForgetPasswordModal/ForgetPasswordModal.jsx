@@ -1,5 +1,4 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import BootstrapDialogTitle from "../BootstrapDialogTitle/BootstrapDialogTitle";
 import Box from "@mui/material/Box";
 
@@ -7,7 +6,7 @@ import { BootstrapDialog } from "../UI/ModalControls.styled";
 import ForgetPinScreen1 from "../ForgetPinScreen1/ForgetPinScreen1";
 import ForgetPinScreen3 from "../ForgetPinScreen3/ForgetPinScreen3";
 import ForgetPinScreen2 from "../ForgetPinScreen2/ForgetPinScreen2";
-
+import { StyledSubText } from "../UI/FormControls.styled";
 export default function ForgetPasswordModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -22,7 +21,9 @@ export default function ForgetPasswordModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Forget password</Button>
+      <StyledSubText variant="muted" component="a" onClick={handleOpen}>
+        Forget Pin
+      </StyledSubText>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -45,7 +46,10 @@ export default function ForgetPasswordModal() {
             />
           )}
           {page === 3 && (
-            <ForgetPinScreen3 handlePageChange={handlePageChange} />
+            <ForgetPinScreen3
+              handlePageChange={handlePageChange}
+              handleClose={handleClose}
+            />
           )}
         </Box>
       </BootstrapDialog>

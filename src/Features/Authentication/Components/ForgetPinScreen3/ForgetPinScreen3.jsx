@@ -2,7 +2,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { StyledSubmitButton } from "../UI/FormControls.styled";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import check from "../../Assets/check.svg";
-const ForgetPinScreen3 = () => {
+const ForgetPinScreen3 = ({ handleClose }) => {
   const theme = useTheme();
   return (
     <Box
@@ -87,6 +87,7 @@ const ForgetPinScreen3 = () => {
           startIcon={<ArrowBackIcon />}
           autoFocus
           variant="contained"
+          onClick={() => handleClose()}
         >
           Login
         </StyledSubmitButton>

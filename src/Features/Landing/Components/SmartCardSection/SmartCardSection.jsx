@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 import smartCard from "../../Assets/smart-card.png";
 const SmartCardSection = () => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -10,11 +11,17 @@ const SmartCardSection = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        [theme.breakpoints.down("lg")]: {
+          flexDirection: "column",
+        },
       }}
     >
       <Box
         sx={{
           zIndex: "1",
+          [theme.breakpoints.down("lg")]: {
+            marginBottom: "50px",
+          },
         }}
       >
         <Typography component="h1" sx={{ fontWeight: "600", fontSize: "35px" }}>
