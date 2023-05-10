@@ -9,7 +9,7 @@ import {
 import Insights from "../../Components/Insights/Insights";
 import bell from "../../Assets/bell.svg";
 import SmartCard from "../../Components/SmartCard/SmartCard";
-const DashboardSection = () => {
+const DashboardSection = ({ handleChange }) => {
   const theme = useTheme();
   return (
     <Box
@@ -51,7 +51,7 @@ const DashboardSection = () => {
                 <img src={bell} alt="bell" />
               </Button>
             </Box>
-            <Insights />
+            <Insights handleChange={handleChange} />
           </Grid>
           <Grid item xs={6}>
             <SmartCard />

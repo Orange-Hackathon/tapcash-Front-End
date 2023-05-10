@@ -22,6 +22,7 @@ import Profile from "../Profile/Profile";
 import { Route, Routes, useRoutes } from "react-router";
 import { Link } from "react-router-dom";
 import ManageChildren from "../ManagaeChildren/ManagaeChildren";
+import Send from "../Send/Send";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -163,9 +164,10 @@ const Dashboard = () => {
         </List>
       </StyledDrawer>
       {/* {routing} */}
-      {page === 0 && <DashboardSection />}
+      {page === 0 && <DashboardSection handleChange={handleChange} />}
       {page === 1 && <Profile handleChange={handleChange} />}
       {page === 2 && <ManageChildren handleChange={handleChange} />}
+      {page === 3 && <Send />}
     </Box>
   );
 };

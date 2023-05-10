@@ -1,12 +1,11 @@
-import { Grid, Typography, Container, Box } from "@mui/material";
+import { Grid, Typography, Button, Box } from "@mui/material";
 import InsightsCard from "../InsightsCard/InsightsCard";
 import InsightsChart from "../InsightsChart/InsightsChart";
-import PaymentsIcon from "@mui/icons-material/Payments";
 import Transactions from "../Transactions/Transactions";
 
 import mobile from "../../Assets/mobile.svg";
 import send from "../../Assets/send.svg";
-const Insights = () => {
+const Insights = ({ handleChange }) => {
   return (
     <Box>
       <Box>
@@ -25,25 +24,37 @@ const Insights = () => {
             </InsightsCard>
           </Grid>
           <Grid item xs={4}>
-            <InsightsCard title="">
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexDirection: "column",
-                  width: "100%",
-                  justifyContent: "center",
-                }}
-              >
-                <img src={send} alt="mobile" />
-                <Typography
-                  variant="h5"
-                  sx={{ padding: "0", marginTop: "24px", fontSize: "20px" }}
+            <Button
+              onClick={(e) => handleChange(e,3)}
+              sx={{
+                padding: "0",
+                margin: "0",
+                "&:hover": {
+                  //you want this to be the same as the backgroundColor above
+                  backgroundColor: "transparent",
+                },
+              }}
+            >
+              <InsightsCard title="">
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    width: "100%",
+                    justifyContent: "center",
+                  }}
                 >
-                  Send
-                </Typography>
-              </Box>
-            </InsightsCard>
+                  <img src={send} alt="mobile" />
+                  <Typography
+                    variant="h5"
+                    sx={{ padding: "0", marginTop: "24px", fontSize: "20px" }}
+                  >
+                    Send
+                  </Typography>
+                </Box>
+              </InsightsCard>
+            </Button>
           </Grid>
           <Grid item xs={4}>
             <InsightsCard title="">
