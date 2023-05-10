@@ -3,10 +3,6 @@
 <h1/>
 </div>
 
-<div align="center">
-    <h1 align='center'>⚡️<i>Tapcash</i>⚡️</h1>
-    <p> Cash with tap </p>
-</div>
 
 <div align="center">
 
