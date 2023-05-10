@@ -76,7 +76,7 @@
 <details>
 <summary>
 <h4 style="display:inline">
-<strong><em> 🙍‍♂️ Dashboard </em></strong></h4>
+<strong><em> 📊 Dashboard </em></strong></h4>
 </summary>
 
 - Your Balance
@@ -107,7 +107,7 @@
 <details>
 <summary>
 <h4 style="display:inline">
-<strong><em> 🙍‍♂️ Manage children</em></strong></h4>
+<strong><em> 👶 Manage children</em></strong></h4>
 </summary>
 
 - Balance
@@ -124,7 +124,7 @@
 <details>
 <summary>
 <h4 style="display:inline">
-<strong><em> 🙍‍♂️ Send money</em></strong></h4>
+<strong><em> 💵 Send money</em></strong></h4>
 </summary>
 
 - Balance
