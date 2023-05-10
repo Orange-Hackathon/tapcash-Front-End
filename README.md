@@ -49,9 +49,25 @@
 
 ## 📷 Features
 
+
+</details>
+
 <details open="open">
 <summary>
 <h4 style="display:inline">
+<strong><em> 🛬 Landing page</em></strong></h4>
+</summary>
+
+
+<img src="./screenshots/landing page.png"/>
+
+</details>
+
+<details open="open">
+<summary>
+<h4 style="display:inline">
+
+
 <strong><em>🔒 User Authentication</em></strong></h4>
 </summary>
 
