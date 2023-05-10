@@ -49,7 +49,7 @@
 
 ## 📷 Features
 
-<details>
+<details open="open">
 <summary>
 <h4 style="display:inline">
 <strong><em>🔒 User Authentication</em></strong></h4>
@@ -67,7 +67,7 @@
 <img src="./screenshots/reset PIN 2.png">
 <img src="./screenshots/reset PIN 3.png">
 
-</details>
+</details open="open">
 
 <details>
 <summary>
@@ -87,7 +87,7 @@
 
 </details>
 
-<details>
+<details open="open">
 <summary>
 <h4 style="display:inline">
 <strong><em> 🙍‍♂️ Profile</em></strong></h4>
@@ -100,7 +100,7 @@
 
 </details>
 
-<details>
+<details open="open">
 <summary>
 <h4 style="display:inline">
 <strong><em> 👶 Manage children</em></strong></h4>
@@ -117,7 +117,7 @@
 
 </details>
 
-<details>
+<details open="open">
 <summary>
 <h4 style="display:inline">
 <strong><em> 💵 Send money</em></strong></h4>
