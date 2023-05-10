@@ -171,6 +171,7 @@ const Dashboard = () => {
                 }}
               />
             }
+            onClick={() => navigate("/")}
             {...a11yProps(1)}
           />
         </List>
