@@ -83,9 +83,9 @@
 <img src="./screenshots/reset PIN 2.png">
 <img src="./screenshots/reset PIN 3.png">
 
-</details open="open">
+</details>
 
-<details>
+<details open="open">
 <summary>
 <h4 style="display:inline">
 <strong><em> 📊 Dashboard </em></strong></h4>
