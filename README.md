@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+<div align="center">
+<img height="300" src="./screenshots/Blue logo.svg">
+<h1/>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+    <h1 align='center'>⚡️<i>Tapcash</i>⚡️</h1>
+    <p> Cash with tap </p>
+</div>
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+[![GitHub contributors](https://img.shields.io/github/contributors/Orange-Hackathon/Front-End)](https://github.com/Orange-Hackathon/Front-End/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/Orange-Hackathon/Front-End)](https://github.com/Orange-Hackathon/Front-End/issues)
+[![GitHub license](https://img.shields.io/github/license/Orange-Hackathon/Front-End)](https://github.com/Orange-Hackathon/Front-End/blob/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/Orange-Hackathon/Front-End)](https://github.com/Orange-Hackathon/Front-End/network)
+[![GitHub stars](https://img.shields.io/github/stars/Orange-Hackathon/Front-End)](https://github.com/Orange-Hackathon/Front-End/stargazers)
+[![GitHub Language](https://img.shields.io/github/languages/top/Orange-Hackathon/Front-End)](https://img.shields.io/github/languages/count/Orange-Hackathon/Front-End)
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<details open="open">
+<summary>
+<h2 style="display:inline">📝 Table of Contents</h2>
+</summary>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [📑 About](#about)
+- [⛏️ Built With](#built-with)
+- [📷 Features](#features)
+- [🏁 Getting started](#getting-started)
+- [✍️ Contributors](#contributors)
+- [🔒 License](#license)
 
-### `npm test`
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📑 About
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Tapcash is a smart wallet that allows parents to manage their children's money and teach them how to spend it wisely. It also allows children to learn how to spend their money wisely and to be responsible for their money.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="./screenshots/tabcash.jpg">
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⛏️ Built with
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Reactjs](https://reactjs.org/)
+- [Material UI](https://mui.com/)
+- [React redux](https://react-redux.js.org/)
+- [React router dom](https://reactrouter.com/en/main)
+- [Axios](https://axios-http.com/docs/intro)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📷 Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em>🔒 User Authentication</em></strong></h4>
+</summary>
 
-## Learn More
+- Sign up
+- Login in
+- Forget Pin
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="./screenshots/Sign up 1.png">
+<img src="./screenshots/Sign up 2.png">
+<img src="./screenshots/Confirm PIN.png">
+<img src="./screenshots/Login.png">
+<img src="./screenshots/reset PIN 1.png">
+<img src="./screenshots/reset PIN 2.png">
+<img src="./screenshots/reset PIN 3.png">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+</details>
 
-### Code Splitting
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 🙍‍♂️ Dashboard </em></strong></h4>
+</summary>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Your Balance
+- Send money
+- Payments
+- Insights
+- Transactions
+- Manage children
 
-### Analyzing the Bundle Size
+<img src="./screenshots/dashboard.png"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 🙍‍♂️ Profile</em></strong></h4>
+</summary>
 
-### Advanced Configuration
+- Your Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+<img src="./screenshots/My Profile.png"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+</details>
 
-### `npm run build` fails to minify
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 🙍‍♂️ Manage children</em></strong></h4>
+</summary>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Balance
+- Limit
+- Allowance
+- Manage categories
+- Recent transactions
+
+
+<img src="./screenshots/manage children.png"/>
+
+</details>
+
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 🙍‍♂️ Send money</em></strong></h4>
+</summary>
+
+- Balance
+- Limit
+- Allowance
+- Manage categories
+- Recent transactions
+
+
+<img src="./screenshots/send 1.png"/>
+<img src="./screenshots/send 2.png"/>
+<img src="./screenshots/send 3.png"/>
+
+</details>
+
+
+## 🏁 Getting started
+
+1. **_Clone the repository_**
+
+```sh
+$ git clone https://github.com/Orange-Hackathon/Front-End.git
+```
+
+2. **_Navigate to repository directory_**
+
+```sh
+$ cd Front-End
+```
+
+3. **_Install dependencies_**
+
+```sh
+$ npm install
+```
+
+### Running
+
+**_Running on development mode_**
+
+```sh
+$ npm start
+```
+## ✍️ Contributors
+
+<table>
+  <tr>
+
+<td align="center">
+<a href="https://github.com/Abd-ELrahmanHamza" target="_black">
+<img src="https://avatars.githubusercontent.com/u/68310502?v=4" width="150px;" alt="Abdelrahman Hamza"/><br /><sub><b>Abdelrahman Hamza</b></sub></a><br />
+</td>
+</tr>
+</table>
+
+## 🔒 License <a name = "license"></a>
+
+> This software is licensed under MIT License, See [License](https://github.com/Orange-Hackathon/Front-End/blob/main/LICENSE) .
