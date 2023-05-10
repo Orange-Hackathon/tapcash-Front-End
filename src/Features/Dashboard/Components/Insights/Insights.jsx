@@ -30,7 +30,6 @@ const Insights = ({ handleChange }) => {
                 padding: "0",
                 margin: "0",
                 "&:hover": {
-                  //you want this to be the same as the backgroundColor above
                   backgroundColor: "transparent",
                 },
               }}

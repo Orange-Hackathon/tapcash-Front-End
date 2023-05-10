@@ -21,6 +21,11 @@ const Transactions = () => {
         paddingLeft: "24px",
         paddingRight: "24px",
         paddingTop: "33px",
+        [theme.breakpoints.down("lg")]: {
+          width: "80%",
+          margin: "auto",
+          marginTop: "20px",
+        },
       }}
     >
       <Container sx={{ padding: "20px" }}>

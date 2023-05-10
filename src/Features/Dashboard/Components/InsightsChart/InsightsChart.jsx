@@ -14,6 +14,11 @@ const InsightsChart = () => {
         paddingLeft: "24px",
         paddingRight: "24px",
         paddingTop: "33px",
+        [theme.breakpoints.down("lg")]: {
+          width: "80%",
+          margin: "auto",
+          marginTop: "20px",
+        },
       }}
     >
       <Typography sx={{ fontSize: "20px", color: "#7C7C7C" }} variant="h5">

@@ -20,7 +20,7 @@ const DashboardSection = ({ handleChange }) => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} lg={6}>
             <Box
               sx={{
                 display: "flex",
@@ -53,7 +53,7 @@ const DashboardSection = ({ handleChange }) => {
             </Box>
             <Insights handleChange={handleChange} />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} lg={6}>
             <SmartCard />
           </Grid>
         </Grid>
