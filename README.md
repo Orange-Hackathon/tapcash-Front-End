@@ -46,6 +46,7 @@
 - [React redux](https://react-redux.js.org/)
 - [React router dom](https://reactrouter.com/en/main)
 - [Axios](https://axios-http.com/docs/intro)
+- [Chartjs](https://www.chartjs.org/docs/latest/)
 
 ## 📷 Features
 
