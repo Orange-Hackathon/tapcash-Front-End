@@ -25,7 +25,21 @@ const InsightsSection = () => {
           display: "flex",
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            position: "relative",
+          }}
+        >
+          <Box
+            sx={{
+              backgroundColor: "primary.main",
+              filter: "blur(450px)",
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              zIndex: "-1",
+            }}
+          />
           <img src={Insights} alt="Insights" />
         </Box>
       </Box>
