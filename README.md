@@ -59,7 +59,7 @@
 </summary>
 
 
-<img src="./screenshots/landing page.png"/>
+<img src="./screenshots/Landing page.png"/>
 
 </details>
 
