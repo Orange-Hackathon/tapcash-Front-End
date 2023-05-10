@@ -19,7 +19,7 @@ import profile from "../../Assets/profile.svg";
 import logout from "../../Assets/logout.svg";
 import dashboard from "../../Assets/dashboard.svg";
 import Profile from "../Profile/Profile";
-import { Route, Routes, useRoutes } from "react-router";
+import { Route, Routes, useNavigate, useRoutes } from "react-router";
 import { Link } from "react-router-dom";
 import ManageChildren from "../ManagaeChildren/ManagaeChildren";
 import Send from "../Send/Send";
@@ -72,14 +72,26 @@ const Dashboard = () => {
     { path: "/*", element: <Profile /> },
   ];
   const routing = useRoutes(routes);
-
+  const navigate = useNavigate();
   return (
     <Box sx={{ display: "flex" }}>
       <StyledDrawer variant="permanent" anchor="left">
         <Box>
           <List>
-            <ListItem>
-              <img src={logo} alt="logo" />
+            <ListItem
+              sx={{
+                "&:hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <img
+                onClick={() => {
+                  navigate("/");
+                }}
+                src={logo}
+                alt="logo"
+              />
             </ListItem>
           </List>
           <List>
@@ -167,7 +179,7 @@ const Dashboard = () => {
       {page === 0 && <DashboardSection handleChange={handleChange} />}
       {page === 1 && <Profile handleChange={handleChange} />}
       {page === 2 && <ManageChildren handleChange={handleChange} />}
-      {page === 3 && <Send />}
+      {page === 3 && <Send handleDashboardChange={handleChange} />}
     </Box>
   );
 };
