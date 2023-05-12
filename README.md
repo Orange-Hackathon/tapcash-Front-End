@@ -60,7 +60,7 @@
 </summary>
 
 
-<img src="./screenshots/Landing page.png"/>
+<img src="./screenshots/Landing page.jpeg"/>
 
 </details>
 
@@ -76,13 +76,13 @@
 - Login in
 - Forget Pin
 
-<img src="./screenshots/Sign up 1.png">
-<img src="./screenshots/Sign up 2.png">
-<img src="./screenshots/Confirm PIN.png">
+<img src="./screenshots/Signup1.png">
+<img src="./screenshots/Signup2.png">
+<img src="./screenshots/Signup3.png">
 <img src="./screenshots/Login.png">
-<img src="./screenshots/reset PIN 1.png">
-<img src="./screenshots/reset PIN 2.png">
-<img src="./screenshots/reset PIN 3.png">
+<img src="./screenshots/forget pin.png">
+<img src="./screenshots/forget pin2.png">
+<img src="./screenshots/forget pin3.png">
 
 </details>
 
@@ -99,7 +99,8 @@
 - Transactions
 - Manage children
 
-<img src="./screenshots/dashboard.png"/>
+<img src="./screenshots/dashboard1.png"/>
+<img src="./screenshots/dashboard2.png"/>
 
 
 </details>
@@ -113,7 +114,7 @@
 - Your Information
 
 
-<img src="./screenshots/My Profile.png"/>
+<img src="./screenshots/profile.png"/>
 
 </details>
 
@@ -130,7 +131,7 @@
 - Recent transactions
 
 
-<img src="./screenshots/manage children.png"/>
+<img src="./screenshots/children.png"/>
 
 </details>
 
