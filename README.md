@@ -76,10 +76,10 @@
 - Login in
 - Forget Pin
 
-<img src="./screenshots/Signup1.png">
-<img src="./screenshots/Signup2.png">
-<img src="./screenshots/Signup3.png">
-<img src="./screenshots/Login.png">
+<img src="./screenshots/signup1.png">
+<img src="./screenshots/signup2.png">
+<img src="./screenshots/signup3.png">
+<img src="./screenshots/login.png">
 <img src="./screenshots/forget pin.png">
 <img src="./screenshots/forget pin2.png">
 <img src="./screenshots/forget pin3.png">
