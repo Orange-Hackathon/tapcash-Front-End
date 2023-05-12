@@ -148,9 +148,9 @@
 - Recent transactions
 
 
-<img src="./screenshots/send 1.png"/>
-<img src="./screenshots/send 2.png"/>
-<img src="./screenshots/send 3.png"/>
+<img src="./screenshots/send1.png"/>
+<img src="./screenshots/send2.png"/>
+<img src="./screenshots/send3.png"/>
 
 </details>
 
